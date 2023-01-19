@@ -1,0 +1,283 @@
+﻿namespace = otf_events
+otf_events.1 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.1.t
+	desc = otf_events.1.d
+	flavor = otf_events.1.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		name = otf_events.1.a
+		default_option = yes
+		PREV = {
+			inherit = ROOT
+		}
+	}
+}
+
+otf_events.2 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		name = otf_events.2.a
+		default_option = yes
+		every_scope_state = {
+			limit = {
+				OR = {
+					state_region = s:STATE_CRIMEA
+					state_region = s:STATE_CHERSON
+					state_region = s:STATE_LUHANSK
+					state_region = s:STATE_ROSTOV
+				}
+				owner = ROOT
+			}
+			set_state_type = incorporated
+			add_modifier = {
+				name = otf_crimean_tatars
+				months = 180
+			}
+		}
+	}
+}
+
+otf_events.3 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		name = otf_events.2.a
+		default_option = yes
+		c:TUR = {
+			if = {
+				limit = {
+					c:MOL = {
+						is_subject_of = c:TUR
+					}
+				}
+				annex = c:MOL
+			}
+			if = {
+				limit = {
+					c:WAL = {
+						is_subject_of = c:TUR
+					}
+				}
+				annex = c:WAL
+			}
+			if = {
+				limit = {
+					c:SER = {
+						is_subject_of = c:TUR
+					}
+				}
+				annex = c:SER
+			}
+			if = {
+				limit = {
+					c:ALB = {
+						is_subject_of = c:TUR
+					}
+				}
+				annex = c:ALB
+			}
+			if = {
+				limit = {
+					c:GRE = {
+						is_subject_of = c:TUR
+					}
+				}
+				annex = c:GRE
+			}
+		}
+	}
+}
+
+otf_events.4 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		name = otf_events.2.a
+		default_option = yes
+		c:TUR = {
+			if = {
+				limit = {
+					c:ALD = {
+						is_subject_of = c:TUR
+					}
+				}
+				annex = c:ALD
+			}
+			if = {
+				limit = {
+					c:MOR = {
+						is_subject_of = c:TUR
+					}
+				}
+				annex = c:MOR
+			}
+			if = {
+				limit = {
+					c:TUN = {
+						is_subject_of = c:TUR
+					}
+				}
+				annex = c:TUN
+			}
+			if = {
+				limit = {
+					c:TRI = {
+						is_subject_of = c:TUR
+					}
+				}
+				annex = c:TRI
+			}
+		}
+	}
+}
+
+otf_events.5 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		name = otf_events.2.a
+		default_option = yes
+		every_scope_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = turkish
+					has_pop_culture = azerbaijani
+					has_pop_culture = kazak
+					has_pop_culture = uighur
+					has_pop_culture = kirgiz
+					has_pop_culture = turkmen
+					has_pop_culture = uzbek
+					has_pop_culture = tatar
+				}
+			}
+			change_pop_culture = {
+				target = cu:turkic
+				value = 1
+			}
+		}
+		every_country = {
+			trigger_event = {
+				id = otto_egypt_events.6
+			}
+		}
+		add_primary_culture = cu:turkic
+	}
+}
+
+otf_events.6 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		name = otf_events.2.a
+		default_option = yes
+		every_scope_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = turkish
+					has_pop_culture = azerbaijani
+					has_pop_culture = kazak
+					has_pop_culture = uighur
+					has_pop_culture = kirgiz
+					has_pop_culture = turkmen
+					has_pop_culture = uzbek
+					has_pop_culture = tatar
+				}
+			}
+			change_pop_culture = {
+				target = cu:turkic
+				value = 1
+			}
+		}
+	}
+}
+
+otf_events.7 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	trigger = {
+		year > 1860
+		tag = TUR
+	}
+	option = {
+		#Pan-Turkism
+		name = otf_events.2.a
+		default_option = yes
+	}
+	option = {
+		#Ottomanism
+		name = otf_events.2.a
+	}
+	option = {
+		#Islamism
+		name = otf_events.2.a
+	}
+}

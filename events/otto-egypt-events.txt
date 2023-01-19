@@ -11,14 +11,13 @@ otto_egypt_events.1 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
 	icon = "gfx/interface/icons/event_icons/unify.dds"
-	duration = 3
+	duration = 1
 	option = {
 		name = otto_egypt_events.1.a
 		default_option = yes
 		c:TUR = {
 			create_diplomatic_play = {
 				name = sepoy_mutiny
-				war = yes
 				type = dp_return_state
 				target_state = s:STATE_ADANA.region_state:EGY
 				add_war_goal = {
@@ -29,25 +28,10 @@ otto_egypt_events.1 = {
 				add_war_goal = {
 					holder = ROOT
 					type = return_state
-					target_state = s:STATE_LEBANON.region_state:EGY
-				}
-				add_war_goal = {
-					holder = ROOT
-					type = return_state
-					target_state = s:STATE_PALESTINE.region_state:EGY
-				}
-				add_war_goal = {
-					holder = ROOT
-					type = return_state
-					target_state = s:STATE_TRANSJORDAN.region_state:EGY
-				}
-				add_war_goal = {
-					holder = ROOT
-					type = return_state
-					target_state = s:STATE_ADANA.region_state:EGY
+					target_state = s:STATE_ALEPPO.region_state:EGY
 				}
 			}
-			change_infamy = 10
+			change_infamy = 8
 		}
 		set_variable = oft_egypt_je
 	}
@@ -85,6 +69,11 @@ otto_egypt_events.2 = {
 	option = {
 		#Take only Sina
 		name = otto_egypt_events.2.b
+		trigger = {
+			ROOT = {
+				country_or_subject_owns_entire_state_region = STATE_SINAI
+			}
+		}
 		change_infamy = 2
 		s:STATE_SINAI.region_state:EGY = {
 			set_state_owner = c:TUR
@@ -123,5 +112,12 @@ otto_egypt_events.2 = {
 		set_variable = oft_egypt_je
 		set_variable = otf_turanic_idea_vr
 		set_variable = fate_of_egypt_dcs
+	}
+	option = {
+		name = otto_egypt_events.2.d
+		create_diplomatic_pact = {
+			country = c:EGY
+			type = puppet
+		}
 	}
 }

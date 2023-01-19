@@ -13,6 +13,21 @@
 	}
 	on_complete = {
 		add_primary_culture = cu:azerbaijani
+		every_scope_state = {
+			limit = {
+				OR = {
+					state_region = s:STATE_AZERBAIJAN
+					state_region = s:STATE_ARMENIA
+					state_region = s:STATE_TABRIZ
+				}
+				owner = ROOT
+			}
+			set_state_type = incorporated
+			add_modifier = {
+				name = otf_crimean_tatars
+				months = 180
+			}
+		}
 	}
 	weight = 10000
 	should_be_pinned_by_default = yes
@@ -27,17 +42,16 @@ otf_central_asia = {
 		has_variable = otf_turanic_idea_vr
 	}
 	complete = {
-		country_or_subject_owns_entire_state_region = sr:region_central_asia
+		scope:oft_centrel_asia_region = {
+			OR = {
+				tag = c:TUR
+				is_subject_of = c:TUR
+			}
+		}
 	}
 	on_complete = {
-		every_scope_culture = {
-			limit = {
-				has_pop_culture = azerbaijani
-			}
-			change_pop_culture = {
-				target = cu:turkish
-				value = 1
-			}
+		trigger_event = {
+			id = otf_events.5
 		}
 	}
 	weight = 5000

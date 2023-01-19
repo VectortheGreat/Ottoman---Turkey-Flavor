@@ -12,24 +12,12 @@
 		country_or_subject_owns_entire_state_region = STATE_CONSTANTINE
 		country_or_subject_owns_entire_state_region = STATE_TLEMCEN
 		country_or_subject_owns_entire_state_region = STATE_AL_RIF
+		country_or_subject_owns_entire_state_region = STATE_LIBYA
+		country_or_subject_owns_entire_state_region = STATE_TRIPOLI
 	}
 	on_complete = {
-		every_country = {
-			limit = {
-				is_subject_of = TUR
-				any_scope_state = {
-					OR = {
-						region = s:STATE_TUNISIA
-						region = s:STATE_ALGIERS
-						region = s:STATE_CONSTANTINE
-						region = s:STATE_TLEMCEN
-						region = s:STATE_AL_RIF
-					}
-				}
-			}
-			trigger_event = {
-				id = otf_events.1
-			}
+		trigger_event = {
+			id = otf_events.4
 		}
 	}
 	weight = 10000
@@ -45,9 +33,19 @@ otf_balkans = {
 		has_variable = fate_of_egypt_dcs
 	}
 	complete = {
-		all_state = {
-			region = sr:region_balkans
-			owner = ROOT
+		NOR = {
+			NOT = {
+				exists = c:GRE
+			}
+			c:GRE = {
+				is_subject_of = c:TUR
+			}
+		}
+		NOR = {
+			exists = c:MON
+			c:MON = {
+				is_subject_of = c:TUR
+			}
 		}
 		country_or_subject_owns_entire_state_region = STATE_DOBRUDJA
 		country_or_subject_owns_entire_state_region = STATE_WALLACHIA
@@ -57,6 +55,18 @@ otf_balkans = {
 	on_complete = {
 		trigger_event = {
 			id = otf_events.3
+		}
+		every_scope_state = {
+			limit = {
+				OR = {
+					state_region = s:STATE_DOBRUDJA
+					state_region = s:STATE_WALLACHIA
+					state_region = s:STATE_MOLDAVIA
+					state_region = s:STATE_BESSARABIA
+				}
+				owner = ROOT
+			}
+			set_state_type = incorporated
 		}
 	}
 	weight = 5000

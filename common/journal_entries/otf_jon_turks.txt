@@ -1,0 +1,39 @@
+﻿otf_born_of_jon_turks = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		# year > 1850
+		tag = TUR
+	}
+	complete = {
+		ig:ig_intelligentsia = {
+			ig_government_power_share >= 0.2
+			is_in_government = yes
+		}
+		literacy_rate = 30
+	}
+	on_complete = {
+		#Özel Bufflar
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+otf_the_ideology_of_the_empire = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		# year > 1850
+		tag = TUR
+	}
+	complete = {
+		ig:ig_intelligentsia = {
+			ig_government_power_share >= 0.2
+			is_in_government = yes
+		}
+		literacy_rate = 30
+	}
+	on_complete = {
+		#Özel Bufflar
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
