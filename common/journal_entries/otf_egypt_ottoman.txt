@@ -1,0 +1,68 @@
+﻿otf_pre_otto_egypt_war = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		tag = c:TUR
+	}
+	possible = {
+		tag = c:TUR
+	}
+	timeout = 2	#1095
+	on_timeout = {
+		trigger_event = {
+			id = otto_egypt_events.1
+		}
+	}
+	invalid = {
+		NOR = {
+			is_at_war = yes
+			is_diplomatic_play_enemy_of = EGY
+		}
+	}
+	progressbar = yes
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+je_sick_man_egypt = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = oft_egypt_je
+	}
+	possible = {
+		has_variable = oft_egypt_je
+	}
+	complete = {
+		OR = {
+			AND = {
+				exists = c:EGY
+				c:EGY = {
+					is_subject_of = ROOT
+				}
+			}
+			AND = {
+				owns_entire_state_region = STATE_SINAI
+				owns_entire_state_region = STATE_UPPER_EGYPT
+				owns_entire_state_region = STATE_MIDDLE_EGYPT
+				owns_entire_state_region = STATE_LOWER_EGYPT
+			}
+		}
+	}
+	on_complete = {
+		custom_tooltip = je_sick_man_advance
+		change_variable = {
+			name = sick_man_var
+			add = 1
+		}
+		set_variable = fate_of_egypt_dcs
+		set_variable = restore_empire_je
+		set_variable = otf_turanic_idea_vr
+	}
+	invalid = {
+		custom_tooltip = {
+			text = finished_sick_man_tt
+			has_variable = sick_man_complete
+		}
+	}
+	inheritable = no
+	weight = 5000
+}

@@ -1,0 +1,87 @@
+﻿otf_north_africa = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = fate_of_egypt_dcs
+	}
+	possible = {
+		has_variable = fate_of_egypt_dcs
+	}
+	complete = {
+		country_or_subject_owns_entire_state_region = STATE_TUNISIA
+		country_or_subject_owns_entire_state_region = STATE_ALGIERS
+		country_or_subject_owns_entire_state_region = STATE_CONSTANTINE
+		country_or_subject_owns_entire_state_region = STATE_TLEMCEN
+		country_or_subject_owns_entire_state_region = STATE_AL_RIF
+	}
+	on_complete = {
+		every_country = {
+			limit = {
+				is_subject_of = TUR
+				any_scope_state = {
+					OR = {
+						region = s:STATE_TUNISIA
+						region = s:STATE_ALGIERS
+						region = s:STATE_CONSTANTINE
+						region = s:STATE_TLEMCEN
+						region = s:STATE_AL_RIF
+					}
+				}
+			}
+			trigger_event = {
+				id = otf_events.1
+			}
+		}
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+otf_balkans = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = fate_of_egypt_dcs
+	}
+	possible = {
+		has_variable = fate_of_egypt_dcs
+	}
+	complete = {
+		all_state = {
+			region = sr:region_balkans
+			owner = ROOT
+		}
+		country_or_subject_owns_entire_state_region = STATE_DOBRUDJA
+		country_or_subject_owns_entire_state_region = STATE_WALLACHIA
+		country_or_subject_owns_entire_state_region = STATE_MOLDAVIA
+		country_or_subject_owns_entire_state_region = STATE_BESSARABIA
+	}
+	on_complete = {
+		trigger_event = {
+			id = otf_events.3
+		}
+	}
+	weight = 5000
+	should_be_pinned_by_default = yes
+}
+
+otf_crimea = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = fate_of_egypt_dcs
+	}
+	possible = {
+		has_variable = fate_of_egypt_dcs
+	}
+	complete = {
+		country_or_subject_owns_entire_state_region = STATE_CRIMEA
+		country_or_subject_owns_entire_state_region = STATE_CHERSON
+		country_or_subject_owns_entire_state_region = STATE_LUHANSK
+		country_or_subject_owns_entire_state_region = STATE_ROSTOV
+	}
+	on_complete = {
+		trigger_event = {
+			id = otf_events.2
+		}
+	}
+	weight = 5000
+	should_be_pinned_by_default = yes
+}

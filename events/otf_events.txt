@@ -1,0 +1,148 @@
+﻿namespace = otf_events
+otf_events.1 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.1.t
+	desc = otf_events.1.d
+	flavor = otf_events.1.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		name = otf_events.1.a
+		default_option = yes
+		FROM = {
+			annex = ROOT
+		}
+	}
+}
+
+otf_events.2 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		name = otf_events.2.a
+		default_option = yes
+		s:STATE_CRIMEA = {
+			change_pop_culture = {
+				value = 0.75
+				target = cu:tatar
+			}
+			add_modifier = {
+				name = otf_crimean_tatars
+				months = 180
+			}
+		}
+		s:STATE_CHERSON = {
+			change_pop_culture = {
+				value = 1
+				target = cu:tatar
+			}
+			add_modifier = {
+				name = otf_crimean_tatars
+				months = 180
+			}
+		}
+		s:STATE_LUHANSK = {
+			change_pop_culture = {
+				value = 0.6
+				target = cu:tatar
+			}
+			add_modifier = {
+				name = otf_crimean_tatars
+				months = 180
+			}
+		}
+		s:STATE_ROSTOV = {
+			change_pop_culture = {
+				value = 0.4
+				target = cu:tatar
+			}
+			add_modifier = {
+				name = otf_crimean_tatars
+				months = 180
+			}
+		}
+	}
+}
+
+otf_events.3 = {
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		name = otf_events.2.a
+		default_option = yes
+		every_country = {
+			limit = {
+				is_subject_of = c:TUR
+				OR = {
+					s:STATE_DOBRUDJA = {
+						contains_capital_of = ROOT
+					}
+					s:STATE_WALLACHIA = {
+						contains_capital_of = ROOT
+					}
+					s:STATE_MOLDAVIA = {
+						contains_capital_of = ROOT
+					}
+					s:STATE_BESSARABIA = {
+						contains_capital_of = ROOT
+					}
+				}
+			}
+			trigger_event = {
+				id = otf_events.1
+			}
+		}
+	}
+	option = {
+		name = otf_events.2.a
+		default_option = yes
+		every_country = {
+			limit = {
+				is_subject_of = c:TUR
+				OR = {
+					s:STATE_DOBRUDJA = {
+						contains_capital_of = THIS
+					}
+					s:STATE_WALLACHIA = {
+						contains_capital_of = THIS
+					}
+					s:STATE_MOLDAVIA = {
+						contains_capital_of = THIS
+					}
+					s:STATE_BESSARABIA = {
+						contains_capital_of = THIS
+					}
+				}
+			}
+			trigger_event = {
+				id = otf_events.1
+			}
+		}
+	}
+}

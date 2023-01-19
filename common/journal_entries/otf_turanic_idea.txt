@@ -1,0 +1,45 @@
+﻿otf_azerbaijan = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = otf_turanic_idea_vr
+	}
+	possible = {
+		has_variable = otf_turanic_idea_vr
+	}
+	complete = {
+		country_or_subject_owns_entire_state_region = STATE_AZERBAIJAN
+		country_or_subject_owns_entire_state_region = STATE_ARMENIA
+		country_or_subject_owns_entire_state_region = STATE_TABRIZ
+	}
+	on_complete = {
+		add_primary_culture = cu:azerbaijani
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+otf_central_asia = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = otf_turanic_idea_vr
+	}
+	possible = {
+		has_variable = otf_turanic_idea_vr
+	}
+	complete = {
+		country_or_subject_owns_entire_state_region = sr:region_central_asia
+	}
+	on_complete = {
+		every_scope_culture = {
+			limit = {
+				has_pop_culture = azerbaijani
+			}
+			change_pop_culture = {
+				target = cu:turkish
+				value = 1
+			}
+		}
+	}
+	weight = 5000
+	should_be_pinned_by_default = yes
+}

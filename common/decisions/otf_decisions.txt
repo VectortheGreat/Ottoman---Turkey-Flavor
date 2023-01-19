@@ -1,0 +1,35 @@
+﻿otf_fate_of_egypt = {
+	is_shown = {
+		has_variable = fate_of_egypt_dcs
+		NOT = {
+			has_variable = clr_egypt_dsc
+		}
+	}
+	possible = {
+		this = c:TUR
+		c:EGY = {
+			is_subject_of = c:TUR
+		}
+	}
+	when_taken = {
+		trigger_event = {
+			id = otto_egypt_events.2
+		}
+	}
+	ai_chance = {
+		base = 0
+		modifier = {
+			trigger = {
+				bureaucracy > 0
+			}
+			add = 5
+		}
+		modifier = {
+			OR = {
+				is_diplomatic_play_committed_participant = yes
+				is_at_war = yes
+			}
+			add = -1000
+		}
+	}
+}
