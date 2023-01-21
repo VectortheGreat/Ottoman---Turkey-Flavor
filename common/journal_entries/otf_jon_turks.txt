@@ -1,8 +1,8 @@
 ﻿otf_born_of_jon_turks = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	is_shown_when_inactive = {
-		# year > 1850
-		tag = TUR
+		exists = c:TUR
+		this = c:TUR
 	}
 	complete = {
 		ig:ig_intelligentsia = {
@@ -13,23 +13,35 @@
 	}
 	on_complete = {
 		#Özel Bufflar
+		set_variable = born_of_jon_turks
 	}
 	weight = 10000
 	should_be_pinned_by_default = yes
 }
 
-otf_the_ideology_of_the_empire = {
+otf_reduce_the_sultans_rights = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	is_shown_when_inactive = {
-		# year > 1850
-		tag = TUR
+		has_variable = born_of_jon_turks
+		has_law = law_type:law_monarchy
+	}
+	timeout = 7300
+	on_timeout = {
+		#3 farklı seçenek:
+		#1 Hala aynı durum fakat siyasette epey radikal ve sorunlar
+		#2 Osmanlı hanedanı dursun fakat meclis açılsın
+		#3 Osmanlı imparatorluğu yıkılsın. Türkiye Cumhuriyeti kurulsun
 	}
 	complete = {
-		ig:ig_intelligentsia = {
-			ig_government_power_share >= 0.2
-			is_in_government = yes
+		NOR = {
+			has_law = law_type:law_monarchy
+			has_law = law_type:law_theocracy
+			has_law = law_type:law_chiefdom
 		}
-		literacy_rate = 30
+		NOR = {
+			has_law = law_type:law_autocracy
+			has_law = law_type:law_elder_council
+		}
 	}
 	on_complete = {
 		#Özel Bufflar

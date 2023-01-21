@@ -112,6 +112,8 @@ otto_egypt_events.2 = {
 		set_variable = oft_egypt_je
 		set_variable = otf_turanic_idea_vr
 		set_variable = fate_of_egypt_dcs
+		set_variable = born_of_jon_turks
+		set_variable = otf_islamic_idea_vr
 	}
 	option = {
 		name = otto_egypt_events.2.d

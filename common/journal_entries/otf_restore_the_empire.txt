@@ -33,15 +33,19 @@ otf_balkans = {
 		has_variable = fate_of_egypt_dcs
 	}
 	complete = {
-		NOR = {
-			NOT = {
-				exists = c:GRE
+		OR = {
+			AND = {
+				NOT = {
+					exists = c:GRE
+				}
 			}
-			c:GRE = {
-				is_subject_of = c:TUR
+			AND = {
+				c:GRE = {
+					is_subject_of = c:TUR
+				}
 			}
 		}
-		NOR = {
+		OR = {
 			exists = c:MON
 			c:MON = {
 				is_subject_of = c:TUR

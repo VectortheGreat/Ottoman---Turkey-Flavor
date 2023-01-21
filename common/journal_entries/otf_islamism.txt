@@ -1,0 +1,44 @@
+﻿otf_reconquer_hijaz = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = otf_islamic_idea_vr
+	}
+	possible = {
+		has_variable = otf_islamic_idea_vr
+	}
+	complete = {
+		OR = {
+			country_or_subject_owns_entire_state_region = STATE_HEDJAZ
+			c:HDJ = {
+				relations:root >= relations_threshold:amicable
+			}
+		}
+	}
+	on_complete = {
+		set_variable = otf_rc_hijaz
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+otf_claim_defender_of_sunni_islam = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = otf_rc_hijaz
+	}
+	possible = {
+		has_variable = otf_rc_hijaz
+	}
+	complete = {
+		global_country_ranking = 1
+		religion = rel:sunni
+		has_law = law_type:law_state_religion
+	}
+	on_complete = {
+		trigger_event = {
+			id = otf_events.5
+		}
+	}
+	weight = 5000
+	should_be_pinned_by_default = yes
+}

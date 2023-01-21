@@ -251,6 +251,7 @@ otf_events.6 = {
 }
 
 otf_events.7 = {
+	#Ideology of the Empire
 	type = country_event
 	placement = IMP
 	title = otf_events.2.t
@@ -265,7 +266,9 @@ otf_events.7 = {
 	duration = 3
 	trigger = {
 		year > 1860
-		tag = TUR
+		exists = c:TUR
+		this = c:TUR
+		has_variable = born_of_jon_turks
 	}
 	option = {
 		#Pan-Turkism
@@ -279,5 +282,224 @@ otf_events.7 = {
 	option = {
 		#Islamism
 		name = otf_events.2.a
+	}
+}
+
+otf_events.8 = {
+	#Hijaz Railway
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	trigger = {
+		exists = c:TUR
+		this = c:TUR
+		has_technology_researched = railways
+		country_or_subject_owns_entire_state_region = STATE_HEDJAZ
+		has_variable = otf_islamic_idea_vr
+	}
+	option = {
+		#Build railways
+		name = otf_events.2.a
+		default_option = yes
+		s:STATE_SYRIA = {
+			create_building = {
+				building = "building_railway"
+				level = 3
+			}
+		}
+		s:STATE_TRANSJORDAN = {
+			create_building = {
+				building = "building_railway"
+				level = 3
+			}
+		}
+		s:STATE_HEDJAZ = {
+			create_building = {
+				building = "building_railway"
+				level = 3
+			}
+		}
+		add_modifier = {
+			name = otf_hijaz_railway_mdf
+			months = 120
+		}
+	}
+	option = {
+		#Just improve local ways
+		name = otf_events.2.a
+		s:STATE_SYRIA = {
+			add_modifier = {
+				name = otf_hijaz_railway_2_mdf
+				months = 120
+			}
+		}
+		s:STATE_TRANSJORDAN = {
+			add_modifier = {
+				name = otf_hijaz_railway_2_mdf
+				months = 120
+			}
+		}
+		s:STATE_HEDJAZ = {
+			add_modifier = {
+				name = otf_hijaz_railway_2_mdf
+				months = 120
+			}
+		}
+	}
+}
+
+otf_events.9 = {
+	#Defender of Sunni Islam
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	option = {
+		#Build railways
+		name = otf_events.2.a
+		default_option = yes
+		every_country = {
+			limit = {
+				religion = rel:sunni
+				is_subject = no
+				country_rank > rank_value:unrecognized_regional_power
+				NOR = {
+					relations:root >= relations_threshold:poor
+					relations:root >= relations_threshold:cold
+					relations:root >= relations_threshold:hostile
+				}
+			}
+			trigger_event = {
+				id = otf_events.10
+			}
+		}
+	}
+	option = {
+		#We don't need this
+		name = otf_events.2.a
+	}
+}
+
+otf_events.10 = {
+	#Defender of Sunni Islam - AI
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	immediate = {
+		c:TUR = {
+			create_diplomatic_pact = {
+				country = ROOT
+				type = protectorate
+			}
+		}
+		set_variable = i_am_islamic_subject_ok
+	}
+	option = {
+		name = otf_events.2.a
+		default_option = yes
+	}
+}
+
+otf_events.11 = {
+	#Annex Event for Islamic Subjects
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	cooldown = {
+		months = 12
+	}
+	trigger = {
+		has_variable = can_annex_islamic_subjects
+		root.infamy < infamy_threshold:infamous
+		any_country = {
+			has_variable = i_am_islamic_subject_ok
+			has_diplomatic_pact = {
+				who = ROOT
+				type = protectorate
+			}
+			is_subject_of = ROOT
+			relations:root >= relations_threshold:amicable
+			is_player = no
+			NOT = {
+				has_variable = german_minor_dont_annex
+			}
+		}
+	}
+	immediate = {
+		random_country = {
+			limit = {
+				has_variable = i_am_islamic_subject_ok
+				has_diplomatic_pact = {
+					who = ROOT
+					type = protectorate
+				}
+				is_subject_of = ROOT
+				relations:root >= relations_threshold:amicable
+				is_player = no
+				NOT = {
+					has_variable = german_minor_dont_annex
+				}
+			}
+			save_scope_as = otf_annex_islamic_subject
+		}
+	}
+	option = {
+		name = german_unification.2.a
+		default_option = yes
+		annex = scope:otf_annex_islamic_subject
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = german_unification.2.b
+		change_relations = {
+			country = scope:otf_annex_islamic_subject
+			value = 20
+		}
+		scope:otf_annex_islamic_subject = {
+			set_variable = {
+				name = islamic_subject_dont_annex
+				days = 1825
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
 	}
 }
