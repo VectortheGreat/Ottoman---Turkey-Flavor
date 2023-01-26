@@ -9,7 +9,7 @@
 			ig_government_power_share >= 0.2
 			is_in_government = yes
 		}
-		literacy_rate = 30
+		literacy_rate = 0.3
 	}
 	on_complete = {
 		#Özel Bufflar

@@ -55,6 +55,9 @@ otf_balkans = {
 		country_or_subject_owns_entire_state_region = STATE_WALLACHIA
 		country_or_subject_owns_entire_state_region = STATE_MOLDAVIA
 		country_or_subject_owns_entire_state_region = STATE_BESSARABIA
+		c:TUR = {
+			country_or_subject_owns_entire_state_region = scope:balkan_region
+		}
 	}
 	on_complete = {
 		trigger_event = {

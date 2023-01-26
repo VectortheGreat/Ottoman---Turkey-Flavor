@@ -27,11 +27,18 @@ sick_man.1 = {
 		add_journal_entry = {
 			type = je_sick_man_main
 		}
-		every_scope_state = {
+		#MOD 
+		random_scope_state = {
 			limit = {
-				region = sr:region_central_asia
+				region = sr:region_balkans
 			}
-			save_scope_as = oft_centrel_asia_region
+			save_scope_as = balkan_region
+		}
+		random_scope_state = {
+			limit = {
+				region = s:region_central_asia
+			}
+			save_scope_as = central_asia_region
 		}
 	}
 	option = {

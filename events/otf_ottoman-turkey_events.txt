@@ -225,10 +225,8 @@ otf_events.6 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
 	icon = "gfx/interface/icons/event_icons/unify.dds"
-	duration = 3
-	option = {
-		name = otf_events.2.a
-		default_option = yes
+	duration = 1
+	immediate = {
 		every_scope_pop = {
 			limit = {
 				OR = {
@@ -247,6 +245,10 @@ otf_events.6 = {
 				value = 1
 			}
 		}
+	}
+	option = {
+		name = otf_events.2.a
+		default_option = yes
 	}
 }
 
@@ -306,23 +308,43 @@ otf_events.8 = {
 		country_or_subject_owns_entire_state_region = STATE_HEDJAZ
 		has_variable = otf_islamic_idea_vr
 	}
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_SYRIA
+			}
+			save_scope_as = syria_state
+		}
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_TRANSJORDAN
+			}
+			save_scope_as = transjordan_state
+		}
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_HEDJAZ
+			}
+			save_scope_as = hedjaz_state
+		}
+	}
 	option = {
 		#Build railways
 		name = otf_events.2.a
 		default_option = yes
-		s:STATE_SYRIA = {
+		scope:syria_state = {
 			create_building = {
 				building = "building_railway"
 				level = 3
 			}
 		}
-		s:STATE_TRANSJORDAN = {
+		scope:transjordan_state = {
 			create_building = {
 				building = "building_railway"
 				level = 3
 			}
 		}
-		s:STATE_HEDJAZ = {
+		scope:hedjaz_state = {
 			create_building = {
 				building = "building_railway"
 				level = 3
@@ -379,12 +401,15 @@ otf_events.9 = {
 			limit = {
 				religion = rel:sunni
 				is_subject = no
-				country_rank > rank_value:unrecognized_regional_power
-				NOR = {
-					relations:root >= relations_threshold:poor
-					relations:root >= relations_threshold:cold
-					relations:root >= relations_threshold:hostile
+				NOT = {
+					this = c:TUR
 				}
+				country_rank < rank_value:unrecognized_regional_power
+				# NOR = {
+				# 	relations:root >= relations_threshold:poor
+				# 	relations:root >= relations_threshold:cold
+				# 	relations:root >= relations_threshold:hostile
+				# }
 			}
 			trigger_event = {
 				id = otf_events.10
@@ -410,7 +435,7 @@ otf_events.10 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
 	icon = "gfx/interface/icons/event_icons/unify.dds"
-	duration = 3
+	duration = 1
 	immediate = {
 		c:TUR = {
 			create_diplomatic_pact = {
@@ -439,9 +464,9 @@ otf_events.11 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
 	icon = "gfx/interface/icons/event_icons/unify.dds"
-	duration = 3
+	duration = 1
 	cooldown = {
-		months = 12
+		months = 1		#12
 	}
 	trigger = {
 		has_variable = can_annex_islamic_subjects
@@ -449,11 +474,11 @@ otf_events.11 = {
 		any_country = {
 			has_variable = i_am_islamic_subject_ok
 			has_diplomatic_pact = {
-				who = ROOT
+				who = c:TUR
 				type = protectorate
 			}
 			is_subject_of = ROOT
-			relations:root >= relations_threshold:amicable
+			# relations:root >= relations_threshold:amicable
 			is_player = no
 			NOT = {
 				has_variable = german_minor_dont_annex
@@ -465,11 +490,11 @@ otf_events.11 = {
 			limit = {
 				has_variable = i_am_islamic_subject_ok
 				has_diplomatic_pact = {
-					who = ROOT
+					who = c:TUR
 					type = protectorate
 				}
-				is_subject_of = ROOT
-				relations:root >= relations_threshold:amicable
+				is_subject_of = c:TUR
+				# relations:root >= relations_threshold:amicable
 				is_player = no
 				NOT = {
 					has_variable = german_minor_dont_annex

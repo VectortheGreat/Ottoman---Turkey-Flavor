@@ -42,12 +42,7 @@ otf_central_asia = {
 		has_variable = otf_turanic_idea_vr
 	}
 	complete = {
-		scope:oft_centrel_asia_region = {
-			OR = {
-				tag = c:TUR
-				is_subject_of = c:TUR
-			}
-		}
+		owns_entire_state_region = scope:central_asia_region
 	}
 	on_complete = {
 		trigger_event = {
