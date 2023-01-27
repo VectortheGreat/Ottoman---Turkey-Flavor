@@ -42,7 +42,24 @@ otf_central_asia = {
 		has_variable = otf_turanic_idea_vr
 	}
 	complete = {
-		owns_entire_state_region = scope:central_asia_region
+		custom_tooltip = {
+			text = otf_central_asia_conquer_txt
+			country_or_subject_owns_entire_state_region = STATE_SAMARA
+			country_or_subject_owns_entire_state_region = STATE_URALSK
+			country_or_subject_owns_entire_state_region = STATE_URALSK
+			country_or_subject_owns_entire_state_region = STATE_KHIVA
+			country_or_subject_owns_entire_state_region = STATE_AKMOLINSK
+			country_or_subject_owns_entire_state_region = STATE_TURKMENIA
+			country_or_subject_owns_entire_state_region = STATE_UZBEKIA
+			country_or_subject_owns_entire_state_region = STATE_TAJIKISTAN
+			country_or_subject_owns_entire_state_region = STATE_KIRGHIZIA
+			country_or_subject_owns_entire_state_region = STATE_JETISY
+			country_or_subject_owns_entire_state_region = STATE_SEMIRECHE
+			country_or_subject_owns_entire_state_region = STATE_JETISY
+			country_or_subject_owns_entire_state_region = STATE_SKOPIA
+			country_or_subject_owns_entire_state_region = STATE_DZUNGARIA
+			country_or_subject_owns_entire_state_region = STATE_TIANSHAN
+		}
 	}
 	on_complete = {
 		trigger_event = {

@@ -1,33 +1,20 @@
-﻿otf_ottomanism = {
+﻿otf_legislate_kanuni_esasi = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	is_shown_when_inactive = {
-		has_variable = otf_turanic_idea_vr
+		has_variable = otf_ottomanist_idea_vr
 	}
 	possible = {
-		has_variable = otf_turanic_idea_vr
+		has_variable = otf_ottomanist_idea_vr
 	}
 	complete = {
-		country_or_subject_owns_entire_state_region = STATE_AZERBAIJAN
-		country_or_subject_owns_entire_state_region = STATE_ARMENIA
-		country_or_subject_owns_entire_state_region = STATE_TABRIZ
+		NOR = {
+			has_law = law_type:law_state_religion
+			has_law = law_type:law_autocracy
+		}
+		has_law = law_type:law_multicultural
 	}
 	on_complete = {
-		add_primary_culture = cu:azerbaijani
-		every_scope_state = {
-			limit = {
-				OR = {
-					state_region = s:STATE_AZERBAIJAN
-					state_region = s:STATE_ARMENIA
-					state_region = s:STATE_TABRIZ
-				}
-				owner = ROOT
-			}
-			set_state_type = incorporated
-			add_modifier = {
-				name = otf_crimean_tatars
-				months = 180
-			}
-		}
+		#farklı din ve dil gruplarına sadık bonusu ve radikal azaltımı
 	}
 	weight = 10000
 	should_be_pinned_by_default = yes

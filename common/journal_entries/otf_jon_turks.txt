@@ -24,6 +24,7 @@ otf_reduce_the_sultans_rights = {
 	is_shown_when_inactive = {
 		has_variable = born_of_jon_turks
 		has_law = law_type:law_monarchy
+		has_law = law_type:law_autocracy
 	}
 	timeout = 7300
 	on_timeout = {
@@ -33,14 +34,8 @@ otf_reduce_the_sultans_rights = {
 		#3 Osmanlı imparatorluğu yıkılsın. Türkiye Cumhuriyeti kurulsun
 	}
 	complete = {
-		NOR = {
-			has_law = law_type:law_monarchy
-			has_law = law_type:law_theocracy
-			has_law = law_type:law_chiefdom
-		}
-		NOR = {
+		NOT = {
 			has_law = law_type:law_autocracy
-			has_law = law_type:law_elder_council
 		}
 	}
 	on_complete = {
@@ -48,4 +43,218 @@ otf_reduce_the_sultans_rights = {
 	}
 	weight = 10000
 	should_be_pinned_by_default = yes
+}
+
+#Social CONTENTS
+otf_ban_slavery = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = born_of_jon_turks
+		NOT = {
+			has_law = law_type:law_slavery_banned
+		}
+	}
+	complete = {
+		has_law = law_type:law_slavery_banned
+	}
+	on_complete = {
+		#Özel Bufflar
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+otf_educate_people = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = born_of_jon_turks
+		#variable ekle
+	}
+	complete = {
+		OR = {
+			has_law = law_type:law_religious_schools
+			has_law = law_type:law_private_schools
+			has_law = law_type:law_public_schools
+		}
+		literacy = 0.75
+	}
+	on_complete = {
+		#Özel Bufflar
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+otf_improve_public_service = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = born_of_jon_turks
+		#variable ekle
+	}
+	complete = {
+		institution_investment_level = {
+			institution = institution_schools
+			value >= 4
+		}
+		institution_investment_level = {
+			institution = institution_health_system
+			value >= 4
+		}
+		institution_investment_level = {
+			institution = institution_social_security
+			value >= 4
+		}
+		institution_investment_level = {
+			institution = institution_workplace_safety
+			value >= 4
+		}
+	}
+	on_complete = {
+		#Bürokrasi indirimi
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+otf_women_and_children = {
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/icons/objectives/egalitarian_society.dds"
+	is_shown_when_inactive = {
+		has_variable = born_of_jon_turks
+		#variable ekle
+		NOT = {
+			has_law = law_type:law_state_religion
+		}
+	}
+	complete = {
+		has_law = law_type:law_compulsory_primary_school
+		has_law = law_type:law_womens_suffrage
+	}
+	on_complete = {
+		#Özel Buff / nitelikli nüfus yetişme
+	}
+	weight = 1004
+	inheritable = yes
+}
+
+#Economic Content
+otf_strong_market = {
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
+	is_shown_when_inactive = {
+		has_variable = born_of_jon_turks
+		#variable ekle
+	}
+	complete = {
+		gdp > {
+			value = global_gdp
+			multiply = 0.25
+		}
+		market = {
+			owner = ROOT
+			participants >= 6
+		}
+	}
+	on_complete = {
+		#Özel bonus
+	}
+	weight = 1012
+}
+
+otf_black_gold = {
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
+	is_shown_when_inactive = {
+		has_variable = born_of_jon_turks
+		#variable ekle
+		# has_technology_researched = pumpjacks
+	}
+	complete = {
+		market_capital.market = {
+			mg:oil = {
+				market_goods_cheaper < 0.1
+			}
+		}
+		any_scope_building = {
+			is_building_type = building_oil_rig
+			cash_reserves_ratio > 0.25
+			weekly_profit > 10
+			occupancy >= 0.8
+			level >= 20
+		}
+	}
+	weight = 1010
+}
+
+#Dip-Mil Content
+otf_western_diplomacy = {
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/icons/objectives/hegemon.dds"
+	complete = {
+		any_country = {
+			hidden_trigger = {
+				NOT = {
+					THIS = ROOT
+				}
+			}
+			country_rank >= rank_value:major_power
+			has_diplomatic_pact = {
+				who = root
+				type = alliance
+			}
+			count >= 2
+		}
+		OR = {
+			AND = {
+				c:PRU = {
+					has_diplomatic_pact = {
+						who = root
+						type = alliance
+					}
+					relations:root >= relations_threshold:amicable
+				}
+			}
+			AND = {
+				c:FRA = {
+					has_diplomatic_pact = {
+						who = root
+						type = alliance
+					}
+					relations:root >= relations_threshold:amicable
+				}
+			}
+			AND = {
+				c:GBR = {
+					has_diplomatic_pact = {
+						who = root
+						type = alliance
+					}
+					relations:root >= relations_threshold:amicable
+				}
+			}
+			AND = {
+				c:RUS = {
+					has_diplomatic_pact = {
+						who = root
+						type = alliance
+					}
+					relations:root >= relations_threshold:amicable
+				}
+			}
+			AND = {
+				c:AUS = {
+					has_diplomatic_pact = {
+						who = root
+						type = alliance
+					}
+					relations:root >= relations_threshold:amicable
+				}
+			}
+		}
+	}
+	on_complete = {
+		#
+	}
+	weight = 1003
+	inheritable = yes
 }

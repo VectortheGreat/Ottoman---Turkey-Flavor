@@ -33,30 +33,33 @@ otf_balkans = {
 		has_variable = fate_of_egypt_dcs
 	}
 	complete = {
-		OR = {
-			AND = {
-				NOT = {
-					exists = c:GRE
-				}
-			}
-			AND = {
-				c:GRE = {
-					is_subject_of = c:TUR
-				}
-			}
-		}
-		OR = {
-			exists = c:MON
-			c:MON = {
-				is_subject_of = c:TUR
-			}
-		}
 		country_or_subject_owns_entire_state_region = STATE_DOBRUDJA
 		country_or_subject_owns_entire_state_region = STATE_WALLACHIA
 		country_or_subject_owns_entire_state_region = STATE_MOLDAVIA
 		country_or_subject_owns_entire_state_region = STATE_BESSARABIA
-		c:TUR = {
-			country_or_subject_owns_entire_state_region = scope:balkan_region
+		custom_tooltip = {
+			text = otf_balkan_conquer_txt
+			country_or_subject_owns_entire_state_region = STATE_CRETE
+			country_or_subject_owns_entire_state_region = STATE_WEST_AEGEAN_ISLANDS
+			country_or_subject_owns_entire_state_region = STATE_PELOPONNESE
+			country_or_subject_owns_entire_state_region = STATE_ATTICA
+			country_or_subject_owns_entire_state_region = STATE_IONIAN_ISLANDS
+			country_or_subject_owns_entire_state_region = STATE_THESSALIA
+			country_or_subject_owns_entire_state_region = STATE_MACEDONIA
+			country_or_subject_owns_entire_state_region = STATE_WESTERN_THRACE
+			country_or_subject_owns_entire_state_region = STATE_EASTERN_THRACE
+			country_or_subject_owns_entire_state_region = STATE_NORTHERN_THRACE
+			country_or_subject_owns_entire_state_region = STATE_BULGARIA
+			country_or_subject_owns_entire_state_region = STATE_ALBANIA
+			country_or_subject_owns_entire_state_region = STATE_SKOPIA
+			country_or_subject_owns_entire_state_region = STATE_SOUTHERN_SERBIA
+			country_or_subject_owns_entire_state_region = STATE_MONTENEGRO
+			country_or_subject_owns_entire_state_region = STATE_DALMATIA
+			country_or_subject_owns_entire_state_region = STATE_BOSNIA
+			country_or_subject_owns_entire_state_region = STATE_NORTHERN_SERBIA
+			country_or_subject_owns_entire_state_region = STATE_SLAVONIA
+			country_or_subject_owns_entire_state_region = STATE_CROATIA
+			country_or_subject_owns_entire_state_region = STATE_SLOVENIA
 		}
 	}
 	on_complete = {

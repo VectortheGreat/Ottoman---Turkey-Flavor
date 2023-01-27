@@ -466,7 +466,7 @@ otf_events.11 = {
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 1
 	cooldown = {
-		months = 1		#12
+		months = 12
 	}
 	trigger = {
 		has_variable = can_annex_islamic_subjects
