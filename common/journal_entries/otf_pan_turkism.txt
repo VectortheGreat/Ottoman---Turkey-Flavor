@@ -69,3 +69,42 @@ otf_central_asia = {
 	weight = 5000
 	should_be_pinned_by_default = yes
 }
+
+otf_modernize_army_pan_turkic = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		has_variable = otf_turanic_idea_vr
+	}
+	complete = {
+		ig:ig_armed_forces = {
+			is_powerful = no
+			is_in_government = no
+		}
+		NOT = {
+			has_law = law_type:law_serfdom
+			has_law = law_type:law_monarchy
+			has_law = law_type:law_peasant_levies
+		}
+		has_technology_researched = general_staff
+		NOT = {
+			any_scope_building = {
+				is_building_type = building_barracks
+				OR = {
+					has_active_production_method = pm_irregular_infantry
+					has_active_production_method = pm_line_infantry
+				}
+				OR = {
+					has_active_production_method = pm_no_artillery
+					has_active_production_method = pm_cannon_artillery
+				}
+			}
+		}
+	}
+	on_complete = {
+		trigger_event = {
+			id = otf_events.12
+		}
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}

@@ -528,3 +528,78 @@ otf_events.11 = {
 		}
 	}
 }
+
+otf_events.12 = {
+	#Modernize Army
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	immediate = {
+		ig:ig_armed_forces = {
+			save_scope_as = current_army_ig
+		}
+	}
+	option = {
+		# A new Modern Army
+		name = meiji.3.a
+		scope:current_army_ig = {
+			add_ideology = ideology_modernized_army
+		}
+		add_modifier = {
+			name = samurai_officers
+			months = normal_modifier_time
+		}
+	}
+}
+
+otf_events.13 = {
+	#Jon Turks Economic Policy
+	type = country_event
+	placement = IMP
+	title = otf_events.2.t
+	desc = otf_events.2.d
+	flavor = otf_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 3
+	trigger = {
+		year > 1850
+		this = c:TUR
+		has_variable = born_of_jon_turks
+	}
+	option = {
+		#Heavy Industrialization
+		name = otf_events.2.a
+		default_option = yes
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_heavy_industrialization
+		}
+	}
+	option = {
+		#Balanced Industrialization
+		name = otf_events.2.a
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_balanced_industrialization
+		}
+	}
+	option = {
+		#Agriculturalism
+		name = otf_events.2.a
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_agriculturalism
+		}
+	}
+}

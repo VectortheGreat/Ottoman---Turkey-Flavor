@@ -1,0 +1,132 @@
+﻿otf_armenian_resistance = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	is_shown_when_inactive = {
+		this = c:TUR
+	}
+	possible = {
+		# year > 1875
+	}
+	complete = {
+		year > 1885
+		var:armenian_bad_sol_var < 3
+	}
+	on_complete = {
+		#Ermenileri sadık yap
+	}
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					any_scope_state = {
+						owner = c:TUR
+						state_region = {
+							is_homeland = cu:armenian
+						}
+						standard_of_living < 15
+					}
+				}
+				change_variable = {
+					name = armenian_bad_sol_var
+					add = 1
+				}
+			}
+		}
+		random_events = {
+			100 = 0
+			10 = tanzimat_events.5
+		}
+	}
+	current_value = {
+		value = var:armenian_bad_sol_var
+	}
+	goal_add_value = {
+		add = 3
+	}
+	fail = {
+		var:armenian_bad_sol_var >= 3
+	}
+	invalid = {
+		trigger_event = {
+			id = otto_arm_res_events.1
+		}
+		set_variable = armenian_resistance_start
+	}
+	progressbar = yes
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+otf_anti_armenian_policy = {
+	on_monthly_pulse = {
+		random_events = {
+			70 = 0
+			30 = expedition_events.20
+			20 = expedition_events.30
+			20 = expedition_events.40
+			10 = expedition_events.41
+			10 = expedition_events.70
+			20 = expedition_events.50
+			15 = expedition_events.60
+			20 = expedition_events.80
+			20 = expedition_events.90
+			15 = expedition_events.100
+			2 = expedition_events.110
+			40 = expedition_events.120
+			20 = expedition_events.130
+			10 = expedition_events.140
+			15 = expedition_events.150
+			20 = expedition_events.160
+			10 = expedition_events.560
+			20 = expedition_events.695
+		}
+	}
+	complete = {
+		var:anti_armenian_policy_var >= 20
+	}
+	on_complete = {
+		#Ermenileri sür
+	}
+	current_value = {
+		value = var:anti_armenian_policy_var
+	}
+	goal_add_value = {
+		add = 20
+	}
+	fail = {
+		has_variable = completed_armeninan_integration
+	}
+	invalid = {
+		trigger_event = {
+			id = otto_arm_res_events.1
+		}
+	}
+	weight = 10000
+	progressbar = yes
+	should_be_pinned_by_default = yes
+}
+
+otf_armenian_integration = {
+	complete = {
+		var:armenian_integration_var >= 20
+	}
+	on_complete = {
+		#Ermenileri sadık yap
+	}
+	current_value = {
+		value = var:armenian_integration_var
+	}
+	goal_add_value = {
+		add = 20
+	}
+	fail = {
+		has_variable = completed_anti_armenian_policy
+	}
+	invalid = {
+		trigger_event = {
+			id = otto_arm_res_events.1
+		}
+	}
+	weight = 10000
+	progressbar = yes
+	should_be_pinned_by_default = yes
+}

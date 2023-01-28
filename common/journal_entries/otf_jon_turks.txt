@@ -172,16 +172,19 @@ otf_black_gold = {
 	complete = {
 		market_capital.market = {
 			mg:oil = {
-				market_goods_cheaper < 0.1
+				market_goods_cheaper < 0.3
 			}
 		}
 		any_scope_building = {
 			is_building_type = building_oil_rig
 			cash_reserves_ratio > 0.25
-			weekly_profit > 10
+			weekly_profit > 7
 			occupancy >= 0.8
 			level >= 20
 		}
+	}
+	on_complete = {
+		#
 	}
 	weight = 1010
 }
@@ -257,4 +260,22 @@ otf_western_diplomacy = {
 	}
 	weight = 1003
 	inheritable = yes
+}
+
+otf_improve_army_equipment = {
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
+	is_shown_when_inactive = {
+		has_variable = born_of_jon_turks
+		#variable ekle
+	}
+	complete = {
+		has_technology_researched = bolt_action_rifles
+		has_technology_researched = dreadnought
+		has_technology_researched = malaria_prevention
+	}
+	on_complete = {
+		#
+	}
+	weight = 1010
 }
