@@ -12,7 +12,10 @@
 		literacy_rate = 0.3
 	}
 	on_complete = {
-		#Özel Bufflar
+		add_modifier = {
+			name = otf_born_of_jon_turks_mdf
+			months = normal_modifier_time
+		}
 		set_variable = born_of_jon_turks
 	}
 	weight = 10000
@@ -28,10 +31,9 @@ otf_reduce_the_sultans_rights = {
 	}
 	timeout = 7300
 	on_timeout = {
-		#3 farklı seçenek:
-		#1 Hala aynı durum fakat siyasette epey radikal ve sorunlar
-		#2 Osmanlı hanedanı dursun fakat meclis açılsın
-		#3 Osmanlı imparatorluğu yıkılsın. Türkiye Cumhuriyeti kurulsun
+		trigger_event = {
+			id = otto_egypt_events.14
+		}
 	}
 	complete = {
 		NOT = {
@@ -39,7 +41,10 @@ otf_reduce_the_sultans_rights = {
 		}
 	}
 	on_complete = {
-		#Özel Bufflar
+		add_modifier = {
+			name = otf_no_more_autocracy
+			months = normal_modifier_time
+		}
 	}
 	weight = 10000
 	should_be_pinned_by_default = yes
@@ -58,10 +63,17 @@ otf_ban_slavery = {
 		has_law = law_type:law_slavery_banned
 	}
 	on_complete = {
-		#Özel Bufflar
+		random_scope_character = {
+			limit = {
+				is_ruler = yes
+			}
+			add_modifier = {
+				name = otf_freedom_for_everyone
+				months = normal_modifier_time
+			}
+		}
 	}
 	weight = 10000
-	should_be_pinned_by_default = yes
 }
 
 otf_educate_people = {
@@ -79,7 +91,10 @@ otf_educate_people = {
 		literacy = 0.75
 	}
 	on_complete = {
-		#Özel Bufflar
+		add_modifier = {
+			name = otf_educated_people
+			months = normal_modifier_time
+		}
 	}
 	weight = 10000
 	should_be_pinned_by_default = yes
@@ -110,7 +125,10 @@ otf_improve_public_service = {
 		}
 	}
 	on_complete = {
-		#Bürokrasi indirimi
+		add_modifier = {
+			name = otf_modern_public_administration
+			months = normal_modifier_time
+		}
 	}
 	weight = 10000
 	should_be_pinned_by_default = yes
@@ -131,7 +149,10 @@ otf_women_and_children = {
 		has_law = law_type:law_womens_suffrage
 	}
 	on_complete = {
-		#Özel Buff / nitelikli nüfus yetişme
+		add_modifier = {
+			name = otf_equal_rights
+			months = normal_modifier_time
+		}
 	}
 	weight = 1004
 	inheritable = yes
@@ -148,7 +169,7 @@ otf_strong_market = {
 	complete = {
 		gdp > {
 			value = global_gdp
-			multiply = 0.25
+			multiply = 0.35
 		}
 		market = {
 			owner = ROOT

@@ -1,11 +1,17 @@
 ﻿otf_pre_otto_egypt_war = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	on_yearly_pulse = {
+		random_events = {
+			100 = otto_egypt_events.3
+		}
+	}
 	complete = {
 		c:TUR = {
 			NOT = {
 				has_war_with = c:EGY
 			}
 		}
+		year >= 1839
 	}
 	on_complete = {
 		if = {
@@ -21,12 +27,7 @@
 			}
 		}
 	}
-	timeout = 4	#1095
-	# on_timeout = {
-	# 	trigger_event = {
-	# 		id = otto_egypt_events.1
-	# 	}
-	# }
+	timeout = 1095
 	invalid = {
 		NOR = {
 			is_at_war = yes

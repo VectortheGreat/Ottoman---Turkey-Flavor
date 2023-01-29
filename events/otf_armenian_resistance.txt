@@ -13,6 +13,16 @@ otto_arm_res_events.1 = {
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 3
+	immediate = {
+		set_variable = {
+			name = anti_armenian_policy_var
+			value = 0
+		}
+		set_variable = {
+			name = armenian_integration_var
+			value = 0
+		}
+	}
 	option = {
 		name = otto_arm_res_events.2.a
 		add_journal_entry = {
@@ -96,9 +106,15 @@ otto_arm_res_events.2 = {
 				months = normal_modifier_time
 			}
 			every_scope_pop = {
-				change_pop_culture = {
-					value = -0.2
-					target = cu:armenian
+				every_scope_pop = {
+					change_pop_culture = {
+						value = 0.1
+						target = cu:turkish
+					}
+					change_pop_culture = {
+						value = 0.05
+						target = cu:kurdish
+					}
 				}
 			}
 		}
@@ -143,12 +159,8 @@ otto_arm_res_events.2 = {
 			}
 			every_scope_pop = {
 				change_pop_culture = {
-					value = -0.2
-					target = cu:turkish
-				}
-				change_pop_culture = {
-					value = -0.2
-					target = cu:kurdish
+					value = 0.15
+					target = cu:armenian
 				}
 			}
 		}
@@ -359,8 +371,8 @@ otto_arm_res_events.6 = {
 			}
 			every_scope_pop = {
 				change_pop_culture = {
-					value = -0.1
-					target = cu:armenian
+					value = 0.2
+					target = cu:kurdish
 				}
 			}
 			add_radicals = {
@@ -394,7 +406,7 @@ otto_arm_res_events.6 = {
 			}
 			every_scope_pop = {
 				change_pop_culture = {
-					value = -0.1
+					value = 0.2
 					target = cu:armenian
 				}
 			}

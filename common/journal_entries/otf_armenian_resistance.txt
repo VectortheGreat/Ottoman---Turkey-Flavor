@@ -59,29 +59,19 @@
 otf_anti_armenian_policy = {
 	on_monthly_pulse = {
 		random_events = {
-			70 = 0
-			30 = expedition_events.20
-			20 = expedition_events.30
-			20 = expedition_events.40
-			10 = expedition_events.41
-			10 = expedition_events.70
-			20 = expedition_events.50
-			15 = expedition_events.60
-			20 = expedition_events.80
-			20 = expedition_events.90
-			15 = expedition_events.100
-			2 = expedition_events.110
-			40 = expedition_events.120
-			20 = expedition_events.130
-			10 = expedition_events.140
-			15 = expedition_events.150
-			20 = expedition_events.160
-			10 = expedition_events.560
-			20 = expedition_events.695
+			30 = otto_arm_res_events.2
+			20 = otto_arm_res_events.3
+			20 = otto_arm_res_events.4
+			30 = otto_arm_res_events.6
 		}
 	}
 	complete = {
-		var:anti_armenian_policy_var >= 20
+		custom_tooltip = {
+			text = je_expedition_success
+			scope:journal_entry = {
+				is_goal_complete = yes
+			}
+		}
 	}
 	on_complete = {
 		#Ermenileri sür
@@ -95,11 +85,6 @@ otf_anti_armenian_policy = {
 	fail = {
 		has_variable = completed_armeninan_integration
 	}
-	invalid = {
-		trigger_event = {
-			id = otto_arm_res_events.1
-		}
-	}
 	weight = 10000
 	progressbar = yes
 	should_be_pinned_by_default = yes
@@ -107,7 +92,9 @@ otf_anti_armenian_policy = {
 
 otf_armenian_integration = {
 	complete = {
-		var:armenian_integration_var >= 20
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
 	}
 	on_complete = {
 		#Ermenileri sadık yap
@@ -120,11 +107,6 @@ otf_armenian_integration = {
 	}
 	fail = {
 		has_variable = completed_anti_armenian_policy
-	}
-	invalid = {
-		trigger_event = {
-			id = otto_arm_res_events.1
-		}
 	}
 	weight = 10000
 	progressbar = yes

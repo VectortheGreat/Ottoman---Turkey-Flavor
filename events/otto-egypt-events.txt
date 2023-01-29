@@ -70,8 +70,10 @@ otto_egypt_events.2 = {
 		#Take only Sina
 		name = otto_egypt_events.2.b
 		trigger = {
-			ROOT = {
-				country_or_subject_owns_entire_state_region = STATE_SINAI
+			c:TUR = {
+				NOT = {
+					owns_entire_state_region = STATE_SINAI
+				}
 			}
 		}
 		change_infamy = 2
@@ -110,17 +112,69 @@ otto_egypt_events.2 = {
 		name = otto_egypt_events.2.d
 		set_variable = fate_of_egypt_dcs
 		set_variable = oft_egypt_je
-		set_variable = otf_turanic_idea_vr
 		set_variable = fate_of_egypt_dcs
 		set_variable = born_of_jon_turks
-		set_variable = otf_islamic_idea_vr
-		set_variable = otf_ottomanist_idea_vr
 	}
+	# option = {
+	# 	name = otto_egypt_events.2.d
+	# 	create_diplomatic_pact = {
+	# 		country = c:EGY
+	# 		type = puppet
+	# 	}
+	# }
+}
+
+otto_egypt_events.3 = {
+	type = country_event
+	placement = IMP
+	title = otto_egypt_events.1.t
+	desc = otto_egypt_events.1.d
+	flavor = otto_egypt_events.1.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 1
 	option = {
-		name = otto_egypt_events.2.d
-		create_diplomatic_pact = {
-			country = c:EGY
-			type = puppet
+		name = otto_egypt_events.1.a
+		default_option = yes
+		if = {
+			limit = {
+				NOT = {
+					has_technology_researched = line_infantry
+				}
+			}
+			add_technology_progress = {
+				progress = 3000
+				technology = line_infantry
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_technology_researched = napoleonic_warfare
+				}
+			}
+			add_technology_progress = {
+				progress = 5000
+				technology = napoleonic_warfare
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_technology_researched = artillery
+				}
+			}
+			add_technology_progress = {
+				progress = 5000
+				technology = artillery
+			}
+		}
+		else = {
+			start_research_random_technology = yes
 		}
 	}
 }

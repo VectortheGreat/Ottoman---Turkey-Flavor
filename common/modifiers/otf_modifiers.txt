@@ -54,3 +54,34 @@ otf_hamidiye_barracks = {
 	state_turmoil_effects_mult = -0.2
 	state_mortality_turmoil_mult = 0.1
 }
+
+otf_born_of_jon_turks_mdf = {
+	interest_group_ig_intelligentsia_pol_str_mult = 0.1
+	state_education_access_add = 0.1
+}
+
+otf_jon_turks_obey_sultan = {
+	interest_group_ig_intelligentsia_pol_str_mult = -0.1
+	interest_group_ig_intelligentsia_approval_add = -5
+}
+
+otf_no_more_autocracy = {
+	country_legitimacy_base_add = 10
+	interest_group_in_opposition_approval_add = 1
+}
+
+otf_freedom_for_everyone = {
+	character_popularity_add = 1
+}
+
+otf_educated_people = {
+	state_expected_sol_from_literacy = 1
+}
+
+otf_modern_public_administration = {
+	country_bureaucracy_mult = 0.25
+}
+
+otf_equal_rights = {
+	state_migration_pull_mult = 0.1
+}
