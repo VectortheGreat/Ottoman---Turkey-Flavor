@@ -34,6 +34,10 @@ otto_egypt_events.1 = {
 			change_infamy = 8
 		}
 		set_variable = oft_egypt_je
+		add_modifier = {
+			name = otf_otto_egypt_war_mdf
+			months = 30
+		}
 	}
 }
 
@@ -110,18 +114,20 @@ otto_egypt_events.2 = {
 	option = {
 		#Do nothing for now
 		name = otto_egypt_events.2.d
-		set_variable = fate_of_egypt_dcs
-		set_variable = oft_egypt_je
-		set_variable = fate_of_egypt_dcs
-		set_variable = born_of_jon_turks
 	}
-	# option = {
-	# 	name = otto_egypt_events.2.d
-	# 	create_diplomatic_pact = {
-	# 		country = c:EGY
-	# 		type = puppet
-	# 	}
-	# }
+	option = {
+		name = otto_egypt_events.2.d
+		c:TUR = {
+			change_tag = TRU
+		}
+	}
+	option = {
+		name = otto_egypt_events.2.d
+		change_variable = {
+			name = armenian_bad_sol_var
+			add = 6
+		}
+	}
 }
 
 otto_egypt_events.3 = {
@@ -147,7 +153,7 @@ otto_egypt_events.3 = {
 				}
 			}
 			add_technology_progress = {
-				progress = 3000
+				progress = 1500
 				technology = line_infantry
 			}
 		}
@@ -158,19 +164,19 @@ otto_egypt_events.3 = {
 				}
 			}
 			add_technology_progress = {
-				progress = 5000
+				progress = 1500
 				technology = napoleonic_warfare
 			}
 		}
 		else_if = {
 			limit = {
 				NOT = {
-					has_technology_researched = artillery
+					has_technology_researched = army_reserves
 				}
 			}
 			add_technology_progress = {
-				progress = 5000
-				technology = artillery
+				progress = 1500
+				technology = army_reserves
 			}
 		}
 		else = {

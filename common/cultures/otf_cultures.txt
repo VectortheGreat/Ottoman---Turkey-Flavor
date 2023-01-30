@@ -7,9 +7,6 @@
 	religion = sunni
 	traits = {
 		turkic
-		middle_eastern_heritage
-		iranian_turanian_culture_group
-		central_asian_heritage
 	}
 	obsessions = {
 		tea
@@ -163,5 +160,5 @@
 	ethnicities = {
 		1 = arab
 	}
-	graphics = mideast_indian
+	graphics = european
 }

@@ -40,6 +40,10 @@ sick_man.1 = {
 			}
 			save_scope_as = central_asia_region
 		}
+		set_variable = {
+			name = otto_egypt_crisis
+			value = 0
+		}
 	}
 	option = {
 		name = sick_man.1.a
@@ -62,7 +66,7 @@ sick_man.1 = {
 			type = je_sick_man_bureaucracy
 		}
 		add_journal_entry = {
-			type = otf_pre_otto_egypt_war
+			type = otf_pre_otto_egypt_war_je
 		}
 		show_as_tooltip = {
 			add_modifier = {
@@ -77,6 +81,10 @@ sick_man.1 = {
 				name = cizye_tax
 				months = -1
 			}
+		}
+		add_modifier = {
+			name = otf_pre_otto_egypt_war_mdf
+			days = 1095
 		}
 	}
 }

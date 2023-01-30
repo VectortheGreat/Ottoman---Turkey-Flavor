@@ -9,6 +9,7 @@
 		this = c:TUR
 		c:EGY = {
 			is_subject_of = c:TUR
+			# relations:root >= relations_threshold:amicable
 		}
 	}
 	when_taken = {
@@ -39,10 +40,13 @@ otf_annex_islamic_subjects_dcs = {
 		any_country = {
 			has_variable = i_am_islamic_subject_ok
 		}
+		NOT = {
+			has_variable = can_annex_islamic_subjects
+		}
 	}
 	possible = {
 		this = c:TUR
-		prestige >= 10000
+		prestige >= 1000
 		any_country = {
 			has_variable = i_am_islamic_subject_ok
 		}

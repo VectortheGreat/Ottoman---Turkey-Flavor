@@ -1,11 +1,5 @@
-﻿otf_reconquer_hijaz = {
+﻿otf_reconquer_hijaz_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = otf_islamic_idea_vr
-	}
-	possible = {
-		has_variable = otf_islamic_idea_vr
-	}
 	complete = {
 		OR = {
 			country_or_subject_owns_entire_state_region = STATE_HEDJAZ
@@ -16,18 +10,37 @@
 	}
 	on_complete = {
 		set_variable = otf_rc_hijaz
+		if = {
+			limit = {
+				c:HDJ = {
+					is_subject_of = c:TUR
+				}
+			}
+			annex = c:HDJ
+			random_scope_state = {
+				limit = {
+					state_region = s:STATE_HEDJAZ
+				}
+				set_state_type = incorporated
+			}
+		}
+		else = {
+			random_scope_state = {
+				limit = {
+					state_region = s:STATE_HEDJAZ
+				}
+				set_state_type = incorporated
+			}
+		}
 	}
 	weight = 10000
 	should_be_pinned_by_default = yes
 }
 
-otf_claim_defender_of_sunni_islam = {
+otf_claim_defender_of_sunni_islam_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	is_shown_when_inactive = {
-		has_variable = otf_rc_hijaz
-	}
-	possible = {
-		has_variable = otf_rc_hijaz
+		country_or_subject_owns_entire_state_region = STATE_HEDJAZ
 	}
 	complete = {
 		global_country_ranking = 1
@@ -36,7 +49,7 @@ otf_claim_defender_of_sunni_islam = {
 	}
 	on_complete = {
 		trigger_event = {
-			id = otf_events.5
+			id = otf_events.9
 		}
 	}
 	weight = 5000

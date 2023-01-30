@@ -10,6 +10,15 @@
 		trigger_event = {
 			id = sick_man.2
 		}
+		add_journal_entry = {
+			type = otf_north_africa_je
+		}
+		add_journal_entry = {
+			type = otf_balkans_je
+		}
+		add_journal_entry = {
+			type = otf_crimea_je
+		}
 	}
 	timeout = 7300
 	on_timeout = {
@@ -105,12 +114,6 @@ je_sick_man_syria = {
 
 je_sick_man_egypt = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = oft_egypt_je
-	}
-	possible = {
-		has_variable = oft_egypt_je
-	}
 	complete = {
 		OR = {
 			AND = {
@@ -134,8 +137,6 @@ je_sick_man_egypt = {
 			add = 1
 		}
 		set_variable = fate_of_egypt_dcs
-		set_variable = restore_empire_je
-		set_variable = otf_turanic_idea_vr
 	}
 	invalid = {
 		custom_tooltip = {

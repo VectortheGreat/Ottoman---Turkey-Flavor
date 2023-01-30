@@ -8,7 +8,7 @@ otf_diplomatic_leader = {
 	country_prestige_mult = 0.1
 }
 
-otf_crimean_tatars = {
+otf_guaranteed_life = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	state_standard_of_living_add = 2
 }
@@ -71,11 +71,11 @@ otf_no_more_autocracy = {
 }
 
 otf_freedom_for_everyone = {
-	character_popularity_add = 1
+	character_popularity_add = 25
 }
 
 otf_educated_people = {
-	state_expected_sol_from_literacy = 1
+	state_assimilation_mult = 0.15
 }
 
 otf_modern_public_administration = {
@@ -84,4 +84,39 @@ otf_modern_public_administration = {
 
 otf_equal_rights = {
 	state_migration_pull_mult = 0.1
+}
+
+otf_developed_market = {
+	country_trade_route_competitiveness_mult = 0.25
+}
+
+otf_black_gold_mdf = {
+	building_output_oil_mult = 0.1
+}
+
+otf_balance_politics = {
+	country_influence_mult = 0.05
+}
+
+otf_advanced_weapons_industry = {
+	building_output_artillery_mult = 0.1
+	building_output_ammunition_mult = 0.1
+	building_output_small_arms_mult = 0.1
+}
+
+otf_armenian_become_loyal = {
+	state_loyalists_from_sol_change_mult = 0.25
+}
+
+otf_pre_otto_egypt_war_mdf = {
+	country_military_tech_cost_mult = -0.2
+}
+
+otf_legislate_kanuni_esasi_mdf = {
+	state_radicals_from_discrimination_mult = -0.2
+}
+
+otf_otto_egypt_war_mdf = {
+	unit_army_offense_add = 15
+	unit_army_defense_add = 15
 }

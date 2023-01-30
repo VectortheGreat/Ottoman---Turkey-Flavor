@@ -1,17 +1,28 @@
-﻿otf_pre_otto_egypt_war = {
+﻿otf_pre_otto_egypt_war_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	on_yearly_pulse = {
 		random_events = {
 			100 = otto_egypt_events.3
 		}
 	}
-	complete = {
-		c:TUR = {
-			NOT = {
-				has_war_with = c:EGY
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = otto_egypt_crisis
+				add = 1
 			}
 		}
-		year >= 1839
+	}
+	current_value = {
+		value = var:otto_egypt_crisis
+	}
+	goal_add_value = {
+		add = 36
+	}
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
 	}
 	on_complete = {
 		if = {
@@ -27,9 +38,8 @@
 			}
 		}
 	}
-	timeout = 1095
 	invalid = {
-		NOR = {
+		c:TUR = {
 			is_at_war = yes
 			is_diplomatic_play_enemy_of = EGY
 		}

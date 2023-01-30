@@ -1,11 +1,5 @@
-﻿otf_legislate_kanuni_esasi = {
+﻿otf_legislate_kanuni_esasi_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = otf_ottomanist_idea_vr
-	}
-	possible = {
-		has_variable = otf_ottomanist_idea_vr
-	}
 	complete = {
 		NOR = {
 			has_law = law_type:law_state_religion
@@ -14,8 +8,15 @@
 		has_law = law_type:law_multicultural
 	}
 	on_complete = {
-		#farklı din ve dil gruplarına sadık bonusu ve radikal azaltımı
+		every_scope_state = {
+			limit = {
+				owner = c:TUR
+			}
+			add_modifier = {
+				name = otf_legislate_kanuni_esasi_mdf
+				months = -1
+			}
+		}
 	}
 	weight = 10000
-	should_be_pinned_by_default = yes
 }

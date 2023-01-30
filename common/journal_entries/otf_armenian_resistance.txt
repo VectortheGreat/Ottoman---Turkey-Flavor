@@ -1,28 +1,37 @@
-﻿otf_armenian_resistance = {
+﻿otf_armenian_resistance_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		this = c:TUR
-	}
-	possible = {
-		# year > 1875
-	}
 	complete = {
-		year > 1885
-		var:armenian_bad_sol_var < 3
+		NOT = {
+			has_variable = armenian_bad_sol_var
+		}
 	}
 	on_complete = {
-		#Ermenileri sadık yap
+		every_state = {
+			limit = {
+				owner = c:TUR
+				state_region = {
+					is_homeland = cu:armenian
+				}
+			}
+			add_modifier = {
+				name = otf_armenian_become_loyal
+				months = -1
+			}
+		}
 	}
 	on_monthly_pulse = {
 		effect = {
 			if = {
 				limit = {
-					any_scope_state = {
+					any_state = {
 						owner = c:TUR
 						state_region = {
 							is_homeland = cu:armenian
 						}
-						standard_of_living < 15
+						any_scope_pop = {
+							culture = cu:armenian
+							standard_of_living <= 15
+						}
 					}
 				}
 				change_variable = {
@@ -31,21 +40,19 @@
 				}
 			}
 		}
-		random_events = {
-			100 = 0
-			10 = tanzimat_events.5
-		}
 	}
 	current_value = {
 		value = var:armenian_bad_sol_var
 	}
 	goal_add_value = {
-		add = 3
+		add = 100
 	}
 	fail = {
-		var:armenian_bad_sol_var >= 3
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
 	}
-	invalid = {
+	on_fail = {
 		trigger_event = {
 			id = otto_arm_res_events.1
 		}
@@ -56,7 +63,7 @@
 	should_be_pinned_by_default = yes
 }
 
-otf_anti_armenian_policy = {
+otf_anti_armenian_policy_je = {
 	on_monthly_pulse = {
 		random_events = {
 			30 = otto_arm_res_events.2
@@ -74,7 +81,9 @@ otf_anti_armenian_policy = {
 		}
 	}
 	on_complete = {
-		#Ermenileri sür
+		trigger_event = {
+			id = otto_arm_res_events.8
+		}
 	}
 	current_value = {
 		value = var:anti_armenian_policy_var
@@ -90,14 +99,16 @@ otf_anti_armenian_policy = {
 	should_be_pinned_by_default = yes
 }
 
-otf_armenian_integration = {
+otf_armenian_integration_je = {
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
 	}
 	on_complete = {
-		#Ermenileri sadık yap
+		trigger_event = {
+			id = otto_arm_res_events.9
+		}
 	}
 	current_value = {
 		value = var:armenian_integration_var

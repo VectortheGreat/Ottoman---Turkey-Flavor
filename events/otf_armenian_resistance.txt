@@ -26,10 +26,10 @@ otto_arm_res_events.1 = {
 	option = {
 		name = otto_arm_res_events.2.a
 		add_journal_entry = {
-			type = otf_anti_armenian_policy
+			type = otf_anti_armenian_policy_je
 		}
 		add_journal_entry = {
-			type = otf_armenian_integration
+			type = otf_armenian_integration_je
 		}
 	}
 }
@@ -442,6 +442,112 @@ otto_arm_res_events.6 = {
 			add_radicals = {
 				culture = cu:kurdish
 				value = 0.15
+			}
+		}
+	}
+}
+
+otto_arm_res_events.7 = {
+	type = country_event
+	placement = IMP
+	title = otto_arm_res_events.2.t
+	desc = otto_arm_res_events.2.d
+	flavor = otto_arm_res_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 1
+	trigger = {
+		year > 1875
+		this = c:TUR
+	}
+	option = {
+		name = otto_arm_res_events.2.a
+		add_journal_entry = {
+			type = otf_armenian_resistance_je
+		}
+		set_variable = {
+			name = armenian_bad_sol_var
+			value = 0
+			days = 60			#3650
+		}
+	}
+}
+
+otto_arm_res_events.8 = {
+	#Anti Armenian Policy Completed
+	type = country_event
+	placement = IMP
+	title = otto_arm_res_events.2.t
+	desc = otto_arm_res_events.2.d
+	flavor = otto_arm_res_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 1
+	immediate = {
+		random_scope_state = {
+			limit = {
+				owner = c:TUR
+				state_region = {
+					is_homeland = cu:mashriqi
+				}
+			}
+			save_scope_as = mashriqi_state
+		}
+		set_variable = completed_anti_armenian_policy
+	}
+	option = {
+		name = otto_arm_res_events.2.a
+		every_state = {
+			limit = {
+				owner = c:TUR
+			}
+			every_scope_pop = {
+				limit = {
+					culture = cu:armenian
+				}
+				move_pop = scope:mashriqi_state
+			}
+		}
+	}
+}
+
+otto_arm_res_events.9 = {
+	#Armenian Integration
+	type = country_event
+	placement = IMP
+	title = otto_arm_res_events.2.t
+	desc = otto_arm_res_events.2.d
+	flavor = otto_arm_res_events.2.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 1
+	immediate = {
+		set_variable = completed_armeninan_integration
+	}
+	option = {
+		name = otto_arm_res_events.2.a
+		every_state = {
+			limit = {
+				owner = c:TUR
+				state_region = {
+					is_homeland = cu:armenian
+				}
+			}
+			add_modifier = {
+				name = otf_armenian_become_loyal
+				months = -1
 			}
 		}
 	}

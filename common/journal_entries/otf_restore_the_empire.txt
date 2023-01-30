@@ -1,11 +1,5 @@
-﻿otf_north_africa = {
+﻿otf_north_africa_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = fate_of_egypt_dcs
-	}
-	possible = {
-		has_variable = fate_of_egypt_dcs
-	}
 	complete = {
 		country_or_subject_owns_entire_state_region = STATE_TUNISIA
 		country_or_subject_owns_entire_state_region = STATE_ALGIERS
@@ -24,14 +18,8 @@
 	should_be_pinned_by_default = yes
 }
 
-otf_balkans = {
+otf_balkans_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = fate_of_egypt_dcs
-	}
-	possible = {
-		has_variable = fate_of_egypt_dcs
-	}
 	complete = {
 		country_or_subject_owns_entire_state_region = STATE_DOBRUDJA
 		country_or_subject_owns_entire_state_region = STATE_WALLACHIA
@@ -83,14 +71,8 @@ otf_balkans = {
 	should_be_pinned_by_default = yes
 }
 
-otf_crimea = {
+otf_crimea_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = fate_of_egypt_dcs
-	}
-	possible = {
-		has_variable = fate_of_egypt_dcs
-	}
 	complete = {
 		country_or_subject_owns_entire_state_region = STATE_CRIMEA
 		country_or_subject_owns_entire_state_region = STATE_CHERSON

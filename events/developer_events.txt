@@ -1,0 +1,114 @@
+﻿namespace = dev
+dev.1 = {
+	type = country_event
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_capitalists_meeting.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/world_fair"
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	title = dev.1.t
+	desc = dev.1.d
+	flavor = dev.1.f
+	duration = 3
+	option = {
+		name = dev.1.a
+		default_option = yes
+		set_variable = fate_of_egypt_dcs
+		set_variable = oft_egypt_je
+		set_variable = born_of_jon_turks
+	}
+	option = {
+		name = deb.1.b
+		remove_variable = armenian_bad_sol_var
+	}
+	option = {
+		name = deb.1.c
+		change_variable = {
+			name = otto_egypt_crisis
+			add = 50
+		}
+	}
+	option = {
+		name = deb.1.d
+		change_variable = {
+			name = anti_armenian_policy_var
+			add = 5
+		}
+	}
+	option = {
+		name = deb.1.e
+		change_variable = {
+			name = armenian_integration_var
+			add = 5
+		}
+	}
+	option = {
+		name = deb.1.f
+		random_state = {
+			limit = {
+				owner = c:TUR
+			}
+			every_scope_pop = {
+				set_pop_literacy = {
+					literacy_rate = 1
+				}
+			}
+		}
+		random_state = {
+			limit = {
+				owner = c:TUR
+			}
+			every_scope_pop = {
+				set_pop_literacy = {
+					literacy_rate = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = deb.1.g
+		add_technology_researched = pan-nationalism
+	}
+	option = {
+		name = deb.1.h
+		create_diplomatic_pact = {
+			country = c:HDJ
+			type = puppet
+		}
+	}
+	option = {
+		name = deb.1.i
+		add_technology_researched = line_infantry
+		add_technology_researched = napoleonic_warfare
+		add_technology_researched = army_reserves
+		add_technology_researched = general_staff
+		add_technology_researched = shell_gun
+		add_technology_researched = breech_loading_artillery
+		add_technology_researched = percussion_cap
+		add_technology_researched = rifling
+	}
+	option = {
+		name = deb.1.j
+		remove_variable = otf_turanic_idea_vr
+	}
+	option = {
+		name = deb.1.k
+		ig:ig_armed_forces = {
+			remove_ideology = ideology_royalist
+			leader = {
+				remove_ideology = ideology_royalist
+			}
+		}
+	}
+	option = {
+		name = deb.1.l
+		change_infamy = -100
+	}
+	option = {
+		name = deb.1.l
+		add_journal_entry = {
+			type = otf_born_of_jon_turks
+		}
+	}
+}

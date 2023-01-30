@@ -1,0 +1,39 @@
+﻿namespace = snori_C_events
+snori_C_events.1 = {
+	type = country_event
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_capitalists_meeting.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/world_fair"
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	title = snori_C_events.1.t
+	desc = snori_C_events.1.d
+	flavor = snori_C_events.1.f
+	duration = 3
+	trigger = {
+		has_variable = born_of_jon_turks
+		NOT = {
+			has_variable = otf_islamic_idea_vr
+		}
+		is_at_war = no
+		ig:ig_landowners = {
+			is_powerful = no
+		}
+		ig:ig_intelligentsia = {
+			is_in_government = yes
+		}
+	}
+	immediate = {
+		set_variable = {
+			name = snori_clothes_decision_taken
+		}
+	}
+	option = {
+		name = snori_C_events.1.a
+		add_modifier = {
+			name = snori_kor_clothes_modifier
+			months = -1
+		}
+	}
+}

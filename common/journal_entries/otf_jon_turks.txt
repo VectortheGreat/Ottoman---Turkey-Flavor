@@ -9,20 +9,53 @@
 			ig_government_power_share >= 0.2
 			is_in_government = yes
 		}
-		literacy_rate = 0.3
+		literacy_rate >= 0.25
 	}
 	on_complete = {
 		add_modifier = {
 			name = otf_born_of_jon_turks_mdf
-			months = normal_modifier_time
+			months = -1
 		}
 		set_variable = born_of_jon_turks
+		add_journal_entry = {
+			type = otf_reduce_the_sultans_rights_je
+		}
+		add_journal_entry = {
+			type = otf_ban_slavery_je
+		}
+		add_journal_entry = {
+			type = otf_educate_people_je
+		}
+		add_journal_entry = {
+			type = otf_improve_public_service_je
+		}
+		add_journal_entry = {
+			type = otf_women_and_children_je
+		}
+		add_journal_entry = {
+			type = otf_strong_market_je
+		}
+		add_journal_entry = {
+			type = otf_black_gold_je
+		}
+		add_journal_entry = {
+			type = otf_strong_market_je
+		}
+		add_journal_entry = {
+			type = otf_black_gold_je
+		}
+		add_journal_entry = {
+			type = otf_western_diplomacy_je
+		}
+		add_journal_entry = {
+			type = otf_improve_army_equipment_je
+		}
 	}
 	weight = 10000
 	should_be_pinned_by_default = yes
 }
 
-otf_reduce_the_sultans_rights = {
+otf_reduce_the_sultans_rights_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	is_shown_when_inactive = {
 		has_variable = born_of_jon_turks
@@ -43,22 +76,15 @@ otf_reduce_the_sultans_rights = {
 	on_complete = {
 		add_modifier = {
 			name = otf_no_more_autocracy
-			months = normal_modifier_time
+			months = 180
 		}
 	}
 	weight = 10000
-	should_be_pinned_by_default = yes
 }
 
 #Social CONTENTS
-otf_ban_slavery = {
+otf_ban_slavery_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = born_of_jon_turks
-		NOT = {
-			has_law = law_type:law_slavery_banned
-		}
-	}
 	complete = {
 		has_law = law_type:law_slavery_banned
 	}
@@ -69,19 +95,15 @@ otf_ban_slavery = {
 			}
 			add_modifier = {
 				name = otf_freedom_for_everyone
-				months = normal_modifier_time
+				months = -1
 			}
 		}
 	}
 	weight = 10000
 }
 
-otf_educate_people = {
+otf_educate_people_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = born_of_jon_turks
-		#variable ekle
-	}
 	complete = {
 		OR = {
 			has_law = law_type:law_religious_schools
@@ -93,19 +115,14 @@ otf_educate_people = {
 	on_complete = {
 		add_modifier = {
 			name = otf_educated_people
-			months = normal_modifier_time
+			months = -1
 		}
 	}
 	weight = 10000
-	should_be_pinned_by_default = yes
 }
 
-otf_improve_public_service = {
+otf_improve_public_service_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = born_of_jon_turks
-		#variable ekle
-	}
 	complete = {
 		institution_investment_level = {
 			institution = institution_schools
@@ -127,31 +144,25 @@ otf_improve_public_service = {
 	on_complete = {
 		add_modifier = {
 			name = otf_modern_public_administration
-			months = normal_modifier_time
+			months = -1
 		}
 	}
 	weight = 10000
-	should_be_pinned_by_default = yes
 }
 
-otf_women_and_children = {
-	should_be_pinned_by_default = yes
+otf_women_and_children_je = {
 	icon = "gfx/interface/icons/objectives/egalitarian_society.dds"
-	is_shown_when_inactive = {
-		has_variable = born_of_jon_turks
-		#variable ekle
+	complete = {
+		has_law = law_type:law_compulsory_primary_school
+		has_law = law_type:law_womens_suffrage
 		NOT = {
 			has_law = law_type:law_state_religion
 		}
 	}
-	complete = {
-		has_law = law_type:law_compulsory_primary_school
-		has_law = law_type:law_womens_suffrage
-	}
 	on_complete = {
 		add_modifier = {
 			name = otf_equal_rights
-			months = normal_modifier_time
+			months = -1
 		}
 	}
 	weight = 1004
@@ -159,13 +170,8 @@ otf_women_and_children = {
 }
 
 #Economic Content
-otf_strong_market = {
-	should_be_pinned_by_default = yes
+otf_strong_market_je = {
 	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
-	is_shown_when_inactive = {
-		has_variable = born_of_jon_turks
-		#variable ekle
-	}
 	complete = {
 		gdp > {
 			value = global_gdp
@@ -175,21 +181,21 @@ otf_strong_market = {
 			owner = ROOT
 			participants >= 6
 		}
+		NOT = {
+			has_law = law_type:law_isolationism
+		}
 	}
 	on_complete = {
-		#Özel bonus
+		add_modifier = {
+			name = otf_developed_market
+			months = -1
+		}
 	}
 	weight = 1012
 }
 
-otf_black_gold = {
-	should_be_pinned_by_default = yes
+otf_black_gold_je = {
 	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
-	is_shown_when_inactive = {
-		has_variable = born_of_jon_turks
-		#variable ekle
-		# has_technology_researched = pumpjacks
-	}
 	complete = {
 		market_capital.market = {
 			mg:oil = {
@@ -203,31 +209,21 @@ otf_black_gold = {
 			occupancy >= 0.8
 			level >= 20
 		}
+		has_technology_researched = pumpjacks
 	}
 	on_complete = {
-		#
+		add_modifier = {
+			name = otf_black_gold_mdf
+			months = -1
+		}
 	}
 	weight = 1010
 }
 
 #Dip-Mil Content
-otf_western_diplomacy = {
-	should_be_pinned_by_default = yes
+otf_western_diplomacy_je = {
 	icon = "gfx/interface/icons/objectives/hegemon.dds"
 	complete = {
-		any_country = {
-			hidden_trigger = {
-				NOT = {
-					THIS = ROOT
-				}
-			}
-			country_rank >= rank_value:major_power
-			has_diplomatic_pact = {
-				who = root
-				type = alliance
-			}
-			count >= 2
-		}
 		OR = {
 			AND = {
 				c:PRU = {
@@ -277,26 +273,27 @@ otf_western_diplomacy = {
 		}
 	}
 	on_complete = {
-		#
+		add_modifier = {
+			name = otf_balance_politics
+			months = -1
+		}
 	}
 	weight = 1003
 	inheritable = yes
 }
 
-otf_improve_army_equipment = {
-	should_be_pinned_by_default = yes
+otf_improve_army_equipment_je = {
 	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
-	is_shown_when_inactive = {
-		has_variable = born_of_jon_turks
-		#variable ekle
-	}
 	complete = {
 		has_technology_researched = bolt_action_rifles
-		has_technology_researched = dreadnought
-		has_technology_researched = malaria_prevention
+		has_technology_researched = automatic_machine_guns
+		has_technology_researched = wargaming
 	}
 	on_complete = {
-		#
+		add_modifier = {
+			name = otf_advanced_weapons_industry
+			months = -1
+		}
 	}
 	weight = 1010
 }

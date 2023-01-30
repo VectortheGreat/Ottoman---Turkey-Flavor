@@ -1,0 +1,17 @@
+TRU = {
+	color = "blue_light"
+	tier = empire
+	country_type = recognized
+	cultures = {
+		turkish
+		kazak
+		azerbaijani
+		uighur
+		kirgiz
+		turkmen
+		uzbek
+		tatar
+		turkic
+	}
+	capital = STATE_EASTERN_THRACE
+}

@@ -1,11 +1,5 @@
-﻿otf_azerbaijan = {
+﻿otf_azerbaijan_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = otf_turanic_idea_vr
-	}
-	possible = {
-		has_variable = otf_turanic_idea_vr
-	}
 	complete = {
 		country_or_subject_owns_entire_state_region = STATE_AZERBAIJAN
 		country_or_subject_owns_entire_state_region = STATE_ARMENIA
@@ -24,7 +18,7 @@
 			}
 			set_state_type = incorporated
 			add_modifier = {
-				name = otf_crimean_tatars
+				name = otf_guaranteed_life
 				months = 180
 			}
 		}
@@ -33,19 +27,12 @@
 	should_be_pinned_by_default = yes
 }
 
-otf_central_asia = {
+otf_central_asia_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = otf_turanic_idea_vr
-	}
-	possible = {
-		has_variable = otf_turanic_idea_vr
-	}
 	complete = {
 		custom_tooltip = {
 			text = otf_central_asia_conquer_txt
 			country_or_subject_owns_entire_state_region = STATE_SAMARA
-			country_or_subject_owns_entire_state_region = STATE_URALSK
 			country_or_subject_owns_entire_state_region = STATE_URALSK
 			country_or_subject_owns_entire_state_region = STATE_KHIVA
 			country_or_subject_owns_entire_state_region = STATE_AKMOLINSK
@@ -70,11 +57,8 @@ otf_central_asia = {
 	should_be_pinned_by_default = yes
 }
 
-otf_modernize_army_pan_turkic = {
+otf_modernize_army_pan_turkic_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		has_variable = otf_turanic_idea_vr
-	}
 	complete = {
 		ig:ig_armed_forces = {
 			is_powerful = no
@@ -82,7 +66,7 @@ otf_modernize_army_pan_turkic = {
 		}
 		NOT = {
 			has_law = law_type:law_serfdom
-			has_law = law_type:law_monarchy
+			# has_law = law_type:law_monarchy
 			has_law = law_type:law_peasant_levies
 		}
 		has_technology_researched = general_staff

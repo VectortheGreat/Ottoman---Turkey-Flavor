@@ -52,6 +52,12 @@ otf_events.2 = {
 				name = otf_crimean_tatars
 				months = 180
 			}
+			every_scope_pop = {
+				change_pop_culture = {
+					value = 0.5
+					target = cu:tatar
+				}
+			}
 		}
 	}
 }
@@ -278,18 +284,37 @@ otf_events.7 = {
 	}
 	option = {
 		#Pan-Turkism
+		default_option = yes
 		name = otf_events.2.a
 		set_variable = otf_turanic_idea_vr
-	}
-	option = {
-		#Ottomanism
-		name = otf_events.2.a
-		set_variable = otf_islamic_idea_vr
+		add_journal_entry = {
+			type = otf_azerbaijan_je
+		}
+		add_journal_entry = {
+			type = otf_central_asia_je
+		}
+		add_journal_entry = {
+			type = otf_modernize_army_pan_turkic_je
+		}
 	}
 	option = {
 		#Islamism
-		name = otf_events.2.a
+		name = otf_events.2.b
+		set_variable = otf_islamic_idea_vr
+		add_journal_entry = {
+			type = otf_reconquer_hijaz_je
+		}
+		add_journal_entry = {
+			type = otf_claim_defender_of_sunni_islam_je
+		}
+	}
+	option = {
+		#Ottomanism
+		name = otf_events.2.c
 		set_variable = otf_ottomanist_idea_vr
+		add_journal_entry = {
+			type = otf_legislate_kanuni_esasi_je
+		}
 	}
 }
 
@@ -409,7 +434,8 @@ otf_events.9 = {
 					this = c:TUR
 				}
 				country_rank < rank_value:unrecognized_regional_power
-				# NOR = {
+				relations:root >= relations_threshold:neutral
+				# NAND = {
 				# 	relations:root >= relations_threshold:poor
 				# 	relations:root >= relations_threshold:cold
 				# 	relations:root >= relations_threshold:hostile
@@ -470,7 +496,7 @@ otf_events.11 = {
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 1
 	cooldown = {
-		months = 12
+		days = 1
 	}
 	trigger = {
 		has_variable = can_annex_islamic_subjects
@@ -482,10 +508,10 @@ otf_events.11 = {
 				type = protectorate
 			}
 			is_subject_of = ROOT
-			# relations:root >= relations_threshold:amicable
+			relations:root >= relations_threshold:amicable
 			is_player = no
 			NOT = {
-				has_variable = german_minor_dont_annex
+				has_variable = islamic_subject_dont_annex
 			}
 		}
 	}
@@ -501,7 +527,7 @@ otf_events.11 = {
 				# relations:root >= relations_threshold:amicable
 				is_player = no
 				NOT = {
-					has_variable = german_minor_dont_annex
+					has_variable = islamic_subject_dont_annex
 				}
 			}
 			save_scope_as = otf_annex_islamic_subject

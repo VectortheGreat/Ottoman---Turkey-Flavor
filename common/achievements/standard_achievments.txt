@@ -1,6 +1,5 @@
 ﻿# possible - filters out achivements on game start so we dont have to check everything all the time
 # happened - checks if achivement happened
-
 peccavi = {
 	possible = {
 		has_variable = peccavi_ach_possible
@@ -15,7 +14,7 @@ peccavi = {
 	}
 }
 
-perkeletankki = { 
+perkeletankki = {
 	possible = {
 		has_variable = perkeletankki_ach_possible
 	}
@@ -31,8 +30,6 @@ perkeletankki = {
 		}
 	}
 }
-
-
 
 luxurious_luxembourg = {
 	possible = {
@@ -120,21 +117,21 @@ go_west_young_man = {
 		this = c:USA
 		hidden_trigger = {
 			C:USA = {
-				s:STATE_CALIFORNIA= {
+				s:STATE_CALIFORNIA = {
 					exists = region_state:USA
 					region_state:USA = {
 						is_split_state = no
 						state_population >= 250000
 					}
 				}
-				s:STATE_OREGON= {
+				s:STATE_OREGON = {
 					exists = region_state:USA
 					region_state:USA = {
 						is_split_state = no
 						state_population >= 250000
 					}
 				}
-				s:STATE_WASHINGTON= {
+				s:STATE_WASHINGTON = {
 					exists = region_state:USA
 					region_state:USA = {
 						is_split_state = no
@@ -233,7 +230,7 @@ healthy_man_of_europe = {
 	happened = {
 		exists = c:TUR
 		this = c:TUR
-			hidden_trigger = {
+		hidden_trigger = {
 			c:TUR = {
 				institution_investment_level = {
 					institution = institution_health_system
@@ -257,13 +254,13 @@ habsburg_resurgence = {
 				owns_entire_state_region = STATE_SILESIA
 			}
 			or = {
-				NOT = { 
+				NOT = {
 					c:PRU = {
 						is_country_alive = yes
 					}
 				}
-				c:PRU = { 
-					country_rank < rank_value:major_power 
+				c:PRU = {
+					country_rank < rank_value:major_power
 				}
 			}
 		}
@@ -315,7 +312,7 @@ manifest_mexico = {
 		OR = {
 			NOT = {
 				c:USA = {
-					is_country_alive = yes 
+					is_country_alive = yes
 				}
 			}
 			c:USA = {
@@ -333,7 +330,7 @@ american_territory = {
 		exists = c:SEQ
 		this = c:SEQ
 		exists = c:USA
-		c:USA ={
+		c:USA = {
 			is_subject_of = c:SEQ
 			any_scope_state = {
 				count <= 3
@@ -342,7 +339,7 @@ american_territory = {
 	}
 }
 
-broken_promises = { 
+broken_promises = {
 	possible = {
 		has_variable = broken_promises_ach_possible
 	}
@@ -434,7 +431,7 @@ deeds_not_words = {
 	}
 }
 
-first_flight = { 
+first_flight = {
 	possible = {
 	}
 	happened = {
@@ -459,14 +456,14 @@ poor_huddled_masses = {
 	}
 	happened = {
 		hidden_trigger = {
-			any_scope_state = {	
-				is_mass_migration_target = yes 
+			any_scope_state = {
+				is_mass_migration_target = yes
 			}
 		}
 	}
 }
 
-billionare = { 
+billionare = {
 	possible = {
 	}
 	happened = {
@@ -476,7 +473,7 @@ billionare = {
 	}
 }
 
-serfs_up = { 
+serfs_up = {
 	possible = {
 		has_variable = serfs_up_ach_possible
 	}
@@ -532,7 +529,7 @@ enlightened_despot = {
 	}
 	happened = {
 		hidden_trigger = {
-			has_law = law_type:law_autocracy 
+			has_law = law_type:law_autocracy
 			any_scope_state = {
 				percent = 1
 				is_production_method_active = {
@@ -546,7 +543,9 @@ enlightened_despot = {
 
 mightier_than_the_sword = {
 	possible = {
-		NOT = { has_global_variable = achievement_mightier_than_the_sword }
+		NOT = {
+			has_global_variable = achievement_mightier_than_the_sword
+		}
 	}
 	happened = {
 		hidden_trigger = {
@@ -557,7 +556,9 @@ mightier_than_the_sword = {
 
 revolutionary = {
 	possible = {
-		NOT = { has_global_variable = achievement_revolutionary }
+		NOT = {
+			has_global_variable = achievement_revolutionary
+		}
 	}
 	happened = {
 		hidden_trigger = {
@@ -588,7 +589,9 @@ we_are_not_amused = {
 				relations:root < relations_threshold:cordial
 			}
 		}
-		root = { has_diplomats_expelled = c:FRA }
+		root = {
+			has_diplomats_expelled = c:FRA
+		}
 	}
 }
 
@@ -612,7 +615,7 @@ institutional = {
 				}
 				institution_investment_level = {
 					institution = institution_workplace_safety
-					value = 5 
+					value = 5
 				}
 				institution_investment_level = {
 					institution = institution_schools
@@ -652,7 +655,7 @@ poppydock = {
 grander_colombia = {
 	possible = {
 	}
-	happened = { 
+	happened = {
 		exists = c:GCO
 		this = c:GCO
 		c:GCO = {
@@ -677,14 +680,14 @@ inventive = {
 	}
 	happened = {
 		hidden_trigger = {
-			NOT = { 
-				has_researchable_technology = yes 
+			NOT = {
+				has_researchable_technology = yes
 			}
 		}
 	}
 }
 
-educated = { 
+educated = {
 	possible = {
 		has_objective = objective_tutorial
 	}
@@ -695,7 +698,7 @@ educated = {
 	}
 }
 
-tycoon = { 
+tycoon = {
 	possible = {
 		has_objective = objective_economic_dominance
 	}
@@ -740,18 +743,23 @@ star_swarmed_banner = {
 			c:USA = {
 				any_scope_state = {
 					hidden_trigger = {
-						state_region = { NOT = { has_variable = usa_state_flag_block } }
+						state_region = {
+							NOT = {
+								has_variable = usa_state_flag_block
+							}
+						}
 					}
 					is_incorporated = yes
 					count >= 100
 				}
 				has_law = law_type:law_presidential_republic
-				NOT = { has_law = law_type:law_autocracy }
+				NOT = {
+					has_law = law_type:law_autocracy
+				}
 			}
 		}
 	}
 }
-
 
 achi_test_1 = {
 	possible = {
