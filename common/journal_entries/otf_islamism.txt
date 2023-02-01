@@ -5,6 +5,7 @@
 			country_or_subject_owns_entire_state_region = STATE_HEDJAZ
 			c:HDJ = {
 				relations:root >= relations_threshold:amicable
+				is_subject_of = c:TUR
 			}
 		}
 	}
@@ -39,13 +40,11 @@
 
 otf_claim_defender_of_sunni_islam_je = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	is_shown_when_inactive = {
-		country_or_subject_owns_entire_state_region = STATE_HEDJAZ
-	}
 	complete = {
-		global_country_ranking = 1
+		# global_country_ranking = 1
 		religion = rel:sunni
 		has_law = law_type:law_state_religion
+		country_or_subject_owns_entire_state_region = STATE_HEDJAZ
 	}
 	on_complete = {
 		trigger_event = {

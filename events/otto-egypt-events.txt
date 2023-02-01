@@ -1,5 +1,6 @@
 ﻿namespace = otto_egypt_events
 otto_egypt_events.1 = {
+	#1939 Second Ottoman-Egypt War
 	type = country_event
 	placement = IMP
 	title = otto_egypt_events.1.t
@@ -42,6 +43,7 @@ otto_egypt_events.1 = {
 }
 
 otto_egypt_events.2 = {
+	# Fate of Egypt
 	type = country_event
 	placement = ROOT
 	title = otto_egypt_events.2.t
@@ -115,22 +117,10 @@ otto_egypt_events.2 = {
 		#Do nothing for now
 		name = otto_egypt_events.2.d
 	}
-	option = {
-		name = otto_egypt_events.2.d
-		c:TUR = {
-			change_tag = TRU
-		}
-	}
-	option = {
-		name = otto_egypt_events.2.d
-		change_variable = {
-			name = armenian_bad_sol_var
-			add = 6
-		}
-	}
 }
 
 otto_egypt_events.3 = {
+	#Technological support from the west"
 	type = country_event
 	placement = IMP
 	title = otto_egypt_events.1.t
@@ -144,7 +134,7 @@ otto_egypt_events.3 = {
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 1
 	option = {
-		name = otto_egypt_events.1.a
+		name = otto_egypt_events.3.a
 		default_option = yes
 		if = {
 			limit = {

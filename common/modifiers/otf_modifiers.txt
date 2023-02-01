@@ -117,6 +117,14 @@ otf_legislate_kanuni_esasi_mdf = {
 }
 
 otf_otto_egypt_war_mdf = {
-	unit_army_offense_add = 15
-	unit_army_defense_add = 15
+	unit_army_offense_add = 30
+	unit_army_defense_add = 30
+}
+
+otf_peoples_empire_mdf = {
+	state_migration_pull_mult = 0.25
+}
+
+otf_modernize_army_mdf = {
+	interest_group_ig_ig_armed_forces_approval_add = 2
 }

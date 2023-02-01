@@ -14,9 +14,7 @@ dev.1 = {
 	option = {
 		name = dev.1.a
 		default_option = yes
-		set_variable = fate_of_egypt_dcs
-		set_variable = oft_egypt_je
-		set_variable = born_of_jon_turks
+		set_variable = otf_turanic_idea_vr
 	}
 	option = {
 		name = deb.1.b
@@ -30,21 +28,27 @@ dev.1 = {
 		}
 	}
 	option = {
-		name = deb.1.d
-		change_variable = {
-			name = anti_armenian_policy_var
-			add = 5
-		}
-	}
-	option = {
-		name = deb.1.e
-		change_variable = {
-			name = armenian_integration_var
-			add = 5
-		}
-	}
-	option = {
 		name = deb.1.f
+		random_state = {
+			limit = {
+				owner = c:TUR
+			}
+			every_scope_pop = {
+				set_pop_literacy = {
+					literacy_rate = 1
+				}
+			}
+		}
+		random_state = {
+			limit = {
+				owner = c:TUR
+			}
+			every_scope_pop = {
+				set_pop_literacy = {
+					literacy_rate = 1
+				}
+			}
+		}
 		random_state = {
 			limit = {
 				owner = c:TUR
@@ -72,8 +76,13 @@ dev.1 = {
 	}
 	option = {
 		name = deb.1.h
+		c:TUR = {
+			end_truce = {
+				tcountry = c:EGY
+			}
+		}
 		create_diplomatic_pact = {
-			country = c:HDJ
+			country = c:EGY
 			type = puppet
 		}
 	}
@@ -90,7 +99,7 @@ dev.1 = {
 	}
 	option = {
 		name = deb.1.j
-		remove_variable = otf_turanic_idea_vr
+		remove_variable = jon_turk_economic_policy_completed
 	}
 	option = {
 		name = deb.1.k
@@ -108,7 +117,7 @@ dev.1 = {
 	option = {
 		name = deb.1.l
 		add_journal_entry = {
-			type = otf_born_of_jon_turks
+			type = je_sick_man_syria
 		}
 	}
 }

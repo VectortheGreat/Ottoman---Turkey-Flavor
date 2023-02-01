@@ -67,6 +67,18 @@ je_sick_man_syria = {
 		s:STATE_LOWER_EGYPT = {
 			add_claim = ROOT
 		}
+		s:STATE_SYRIA = {
+			set_state_type = incorporated
+		}
+		s:STATE_PALESTINE = {
+			set_state_type = incorporated
+		}
+		s:STATE_TRANSJORDAN = {
+			set_state_type = incorporated
+		}
+		s:STATE_LEBANON = {
+			set_state_type = incorporated
+		}
 		if = {
 			limit = {
 				OR = {
@@ -95,6 +107,7 @@ je_sick_man_syria = {
 				type = je_sick_man_egypt
 			}
 		}
+		set_variable = fate_of_egypt_dcs
 		custom_tooltip = sickman_syria_egypt
 	}
 	invalid = {
@@ -136,7 +149,6 @@ je_sick_man_egypt = {
 			name = sick_man_var
 			add = 1
 		}
-		set_variable = fate_of_egypt_dcs
 	}
 	invalid = {
 		custom_tooltip = {

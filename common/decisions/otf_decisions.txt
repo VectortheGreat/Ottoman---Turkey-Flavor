@@ -4,6 +4,7 @@
 		NOT = {
 			has_variable = clr_egypt_dsc
 		}
+		exists = c:EGY
 	}
 	possible = {
 		this = c:TUR
@@ -46,7 +47,7 @@ otf_annex_islamic_subjects_dcs = {
 	}
 	possible = {
 		this = c:TUR
-		prestige >= 1000
+		prestige >= 100
 		any_country = {
 			has_variable = i_am_islamic_subject_ok
 		}

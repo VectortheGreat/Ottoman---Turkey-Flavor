@@ -16,6 +16,9 @@ snori_C_events.1 = {
 		NOT = {
 			has_variable = otf_islamic_idea_vr
 		}
+		NOT = {
+			has_variable = snori_clothes_decision_taken
+		}
 		is_at_war = no
 		ig:ig_landowners = {
 			is_powerful = no

@@ -22,6 +22,7 @@ otf_events.1 = {
 }
 
 otf_events.2 = {
+	#Reconquest of Crimea
 	type = country_event
 	placement = IMP
 	title = otf_events.2.t
@@ -65,9 +66,9 @@ otf_events.2 = {
 otf_events.3 = {
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.3.t
+	desc = otf_events.3.d
+	flavor = otf_events.3.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -76,7 +77,7 @@ otf_events.3 = {
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 3
 	option = {
-		name = otf_events.2.a
+		name = otf_events.3.a
 		default_option = yes
 		c:TUR = {
 			if = {
@@ -126,9 +127,9 @@ otf_events.3 = {
 otf_events.4 = {
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.4.t
+	desc = otf_events.4.d
+	flavor = otf_events.4.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -137,7 +138,7 @@ otf_events.4 = {
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 3
 	option = {
-		name = otf_events.2.a
+		name = otf_events.4.a
 		default_option = yes
 		c:TUR = {
 			if = {
@@ -179,9 +180,9 @@ otf_events.4 = {
 otf_events.5 = {
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.5.t
+	desc = otf_events.5.d
+	flavor = otf_events.5.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -190,7 +191,7 @@ otf_events.5 = {
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 3
 	option = {
-		name = otf_events.2.a
+		name = otf_events.5.a
 		default_option = yes
 		hidden_effect = {
 			every_scope_pop = {
@@ -224,9 +225,9 @@ otf_events.5 = {
 otf_events.6 = {
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.5.t
+	desc = otf_events.6.d
+	flavor = otf_events.6.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -257,7 +258,7 @@ otf_events.6 = {
 		}
 	}
 	option = {
-		name = otf_events.2.a
+		name = otf_events.6.a
 		default_option = yes
 	}
 }
@@ -266,9 +267,9 @@ otf_events.7 = {
 	#Ideology of the Empire
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.7.t
+	desc = otf_events.7.d
+	flavor = otf_events.7.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -277,15 +278,19 @@ otf_events.7 = {
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 3
 	trigger = {
-		year > 1860
-		exists = c:TUR
-		this = c:TUR
+		year > 1850
 		has_variable = born_of_jon_turks
+		NOT = {
+			has_variable = event7_completed
+		}
+	}
+	immediate = {
+		set_variable = event7_completed
 	}
 	option = {
 		#Pan-Turkism
 		default_option = yes
-		name = otf_events.2.a
+		name = otf_events.7.a
 		set_variable = otf_turanic_idea_vr
 		add_journal_entry = {
 			type = otf_azerbaijan_je
@@ -296,10 +301,14 @@ otf_events.7 = {
 		add_journal_entry = {
 			type = otf_modernize_army_pan_turkic_je
 		}
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_otf_liberal
+			remove_ideology = ideology_liberal
+		}
 	}
 	option = {
 		#Islamism
-		name = otf_events.2.b
+		name = otf_events.7.b
 		set_variable = otf_islamic_idea_vr
 		add_journal_entry = {
 			type = otf_reconquer_hijaz_je
@@ -307,13 +316,24 @@ otf_events.7 = {
 		add_journal_entry = {
 			type = otf_claim_defender_of_sunni_islam_je
 		}
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_otf_republican_islamism
+			remove_ideology = ideology_republican
+		}
 	}
 	option = {
 		#Ottomanism
-		name = otf_events.2.c
+		name = otf_events.7.c
 		set_variable = otf_ottomanist_idea_vr
 		add_journal_entry = {
 			type = otf_legislate_kanuni_esasi_je
+		}
+		add_journal_entry = {
+			type = otf_peoples_empire_je
+		}
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_otf_republican_ottomanism
+			remove_ideology = ideology_republican
 		}
 	}
 }
@@ -322,9 +342,9 @@ otf_events.8 = {
 	#Hijaz Railway
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.8.t
+	desc = otf_events.8.d
+	flavor = otf_events.8.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -335,6 +355,9 @@ otf_events.8 = {
 	trigger = {
 		this = c:TUR
 		has_technology_researched = railways
+		NOT = {
+			has_variable = hijaz_railway_completed
+		}
 		country_or_subject_owns_entire_state_region = STATE_HEDJAZ
 	}
 	immediate = {
@@ -356,10 +379,11 @@ otf_events.8 = {
 			}
 			save_scope_as = hedjaz_state
 		}
+		set_variable = hijaz_railway_completed
 	}
 	option = {
 		#Build railways
-		name = otf_events.2.a
+		name = otf_events.8.a
 		default_option = yes
 		scope:syria_state = {
 			create_building = {
@@ -386,7 +410,7 @@ otf_events.8 = {
 	}
 	option = {
 		#Just improve local ways
-		name = otf_events.2.a
+		name = otf_events.8.b
 		s:STATE_SYRIA = {
 			add_modifier = {
 				name = otf_hijaz_railway_2_mdf
@@ -412,9 +436,9 @@ otf_events.9 = {
 	#Defender of Sunni Islam
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.9.t
+	desc = otf_events.9.d
+	flavor = otf_events.9.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -423,8 +447,7 @@ otf_events.9 = {
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 3
 	option = {
-		#Build railways
-		name = otf_events.2.a
+		name = otf_events.9.a
 		default_option = yes
 		every_country = {
 			limit = {
@@ -435,11 +458,6 @@ otf_events.9 = {
 				}
 				country_rank < rank_value:unrecognized_regional_power
 				relations:root >= relations_threshold:neutral
-				# NAND = {
-				# 	relations:root >= relations_threshold:poor
-				# 	relations:root >= relations_threshold:cold
-				# 	relations:root >= relations_threshold:hostile
-				# }
 			}
 			trigger_event = {
 				id = otf_events.10
@@ -448,7 +466,7 @@ otf_events.9 = {
 	}
 	option = {
 		#We don't need this
-		name = otf_events.2.a
+		name = otf_events.9.b
 	}
 }
 
@@ -456,9 +474,9 @@ otf_events.10 = {
 	#Defender of Sunni Islam - AI
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.9.t
+	desc = otf_events.10.d
+	flavor = otf_events.10.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -476,7 +494,7 @@ otf_events.10 = {
 		set_variable = i_am_islamic_subject_ok
 	}
 	option = {
-		name = otf_events.2.a
+		name = otf_events.10.a
 		default_option = yes
 	}
 }
@@ -485,9 +503,9 @@ otf_events.11 = {
 	#Annex Event for Islamic Subjects
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.11.t
+	desc = otf_events.11.d
+	flavor = otf_events.11.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -496,7 +514,7 @@ otf_events.11 = {
 	icon = "gfx/interface/icons/event_icons/unify.dds"
 	duration = 1
 	cooldown = {
-		days = 1
+		months = 12
 	}
 	trigger = {
 		has_variable = can_annex_islamic_subjects
@@ -508,7 +526,7 @@ otf_events.11 = {
 				type = protectorate
 			}
 			is_subject_of = ROOT
-			relations:root >= relations_threshold:amicable
+			relations:c:TUR >= relations_threshold:amicable
 			is_player = no
 			NOT = {
 				has_variable = islamic_subject_dont_annex
@@ -534,7 +552,7 @@ otf_events.11 = {
 		}
 	}
 	option = {
-		name = german_unification.2.a
+		name = otf_events.11.a
 		default_option = yes
 		annex = scope:otf_annex_islamic_subject
 		ai_chance = {
@@ -542,7 +560,7 @@ otf_events.11 = {
 		}
 	}
 	option = {
-		name = german_unification.2.b
+		name = otf_events.11.b
 		change_relations = {
 			country = scope:otf_annex_islamic_subject
 			value = 20
@@ -563,9 +581,9 @@ otf_events.12 = {
 	#Modernize Army
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.12.t
+	desc = otf_events.12.d
+	flavor = otf_events.12.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -580,13 +598,13 @@ otf_events.12 = {
 	}
 	option = {
 		# A new Modern Army
-		name = meiji.3.a
+		name = meiji.12.a
 		scope:current_army_ig = {
 			add_ideology = ideology_modernized_army
 		}
 		add_modifier = {
-			name = samurai_officers
-			months = normal_modifier_time
+			name = otf_modernize_army_mdf
+			months = -1
 		}
 	}
 }
@@ -595,9 +613,9 @@ otf_events.13 = {
 	#Jon Turks Economic Policy
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.13.t
+	desc = otf_events.13.d
+	flavor = otf_events.13.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -607,12 +625,17 @@ otf_events.13 = {
 	duration = 3
 	trigger = {
 		year > 1850
-		this = c:TUR
 		has_variable = born_of_jon_turks
+		NOT = {
+			has_variable = jon_turk_economic_policy_completed
+		}
+	}
+	immediate = {
+		set_variable = jon_turk_economic_policy_completed
 	}
 	option = {
 		#Heavy Industrialization
-		name = otf_events.2.a
+		name = otf_events.13.a
 		default_option = yes
 		ig:ig_intelligentsia = {
 			add_ideology = ideology_heavy_industrialization
@@ -620,14 +643,14 @@ otf_events.13 = {
 	}
 	option = {
 		#Balanced Industrialization
-		name = otf_events.2.a
+		name = otf_events.13.b
 		ig:ig_intelligentsia = {
 			add_ideology = ideology_balanced_industrialization
 		}
 	}
 	option = {
 		#Agriculturalism
-		name = otf_events.2.a
+		name = otf_events.13.c
 		ig:ig_intelligentsia = {
 			add_ideology = ideology_agriculturalism
 		}
@@ -638,9 +661,9 @@ otf_events.14 = {
 	#Opposition to Authority
 	type = country_event
 	placement = IMP
-	title = otf_events.2.t
-	desc = otf_events.2.d
-	flavor = otf_events.2.f
+	title = otf_events.14.t
+	desc = otf_events.14.d
+	flavor = otf_events.14.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
@@ -655,8 +678,7 @@ otf_events.14 = {
 		}
 	}
 	option = {
-		#Whatever they want, they will obey the Sultan's decisions.
-		name = otf_events.2.a
+		name = otf_events.14.a
 		add_modifier = {
 			name = otf_jon_turks_obey_sultan
 			months = normal_modifier_time
@@ -674,9 +696,7 @@ otf_events.14 = {
 		}
 	}
 	option = {
-		#Accept the request of the radicals and establish the Assembly.
-		#Balanced Industrialization
-		name = otf_events.2.a
+		name = otf_events.14.b
 		ig:ig_intelligentsia = {
 			add_loyalists = {
 				value = 0.15
@@ -692,8 +712,7 @@ otf_events.14 = {
 		}
 	}
 	option = {
-		#Revolution! A revolution that will overthrow the Ottoman dynasty and establish the Turkish Republic!
-		name = otf_events.2.a
+		name = otf_events.14.c
 		ig:ig_intelligentsia = {
 			add_loyalists = {
 				value = 0.3
@@ -714,6 +733,47 @@ otf_events.14 = {
 				}
 			}
 			activate_law = law_type:law_presidential_republic
+		}
+	}
+}
+
+otf_events.15 = {
+	#Socialist Idea
+	type = country_event
+	placement = IMP
+	title = otf_events.15.t
+	desc = otf_events.15.d
+	flavor = otf_events.15.f
+	event_image = {
+		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+	icon = "gfx/interface/icons/event_icons/unify.dds"
+	duration = 1
+	trigger = {
+		has_variable = otf_ottomanist_idea_vr
+		has_technology_researched = socialism
+		NOT = {
+			has_variable = event_15_completed
+		}
+	}
+	immediate = {
+		set_variable = event_15_completed
+	}
+	option = {
+		name = otf_events.15.a
+		default_option = yes
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_otf_socialism
+			remove_ideology = ideology_otf_republican_ottomanism
+		}
+	}
+	option = {
+		#
+		name = otf_events.15.b
+		add_radicals = {
+			value = 0.15
 		}
 	}
 }
