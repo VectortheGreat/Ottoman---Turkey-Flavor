@@ -2,7 +2,7 @@
 otto_arm_res_events.1 = {
 	#Armenian Resistance Start
 	type = country_event
-	placement = IMP
+	placement = s:STATE_ERZURUM.region_state:TUR
 	title = otto_arm_res_events.1.t
 	desc = otto_arm_res_events.1.d
 	flavor = otto_arm_res_events.1.f
@@ -28,7 +28,7 @@ otto_arm_res_events.1 = {
 		}
 	}
 	option = {
-		name = otto_arm_res_events.2.a
+		name = otto_arm_res_events.1.a
 		add_journal_entry = {
 			type = otf_anti_armenian_policy_je
 		}
@@ -41,7 +41,7 @@ otto_arm_res_events.1 = {
 otto_arm_res_events.2 = {
 	#Yerel Ermeni İsyanı
 	type = country_event
-	placement = IMP
+	placement = scope:armenian_rebel_state
 	title = otto_arm_res_events.2.t
 	desc = otto_arm_res_events.2.d
 	flavor = otto_arm_res_events.2.f
@@ -178,7 +178,7 @@ otto_arm_res_events.2 = {
 otto_arm_res_events.3 = {
 	#Avrupa Ermeni Diasporası
 	type = country_event
-	placement = IMP
+	placement = s:STATE_ILE_DE_FRANCE.region_state:FRA
 	title = otto_arm_res_events.3.t
 	desc = otto_arm_res_events.3.d
 	flavor = otto_arm_res_events.3.f
@@ -226,7 +226,7 @@ otto_arm_res_events.3 = {
 otto_arm_res_events.4 = {
 	#Yerel Bürokrata Saldırı
 	type = country_event
-	placement = IMP
+	placement = s:STATE_ERZURUM.region_state:TUR
 	title = otto_arm_res_events.4.t
 	desc = otto_arm_res_events.4.d
 	flavor = otto_arm_res_events.4.f
@@ -266,7 +266,7 @@ otto_arm_res_events.4 = {
 otto_arm_res_events.5 = {
 	#Hamidiye Alayları
 	type = country_event
-	placement = IMP
+	placement = s:STATE_ERZURUM.region_state:TUR
 	title = otto_arm_res_events.5.t
 	desc = otto_arm_res_events.5.d
 	flavor = otto_arm_res_events.5.f
@@ -340,7 +340,7 @@ otto_arm_res_events.5 = {
 otto_arm_res_events.6 = {
 	#Kürt-Ermeni Çatışması
 	type = country_event
-	placement = IMP
+	placement = scope:armenian_vs_kurdish_state
 	title = otto_arm_res_events.6.t
 	desc = otto_arm_res_events.6.d
 	flavor = otto_arm_res_events.6.f
@@ -481,7 +481,7 @@ otto_arm_res_events.6 = {
 otto_arm_res_events.8 = {
 	#Anti Armenian Policy Completed
 	type = country_event
-	placement = IMP
+	placement = s:STATE_ERZURUM.region_state:TUR
 	title = otto_arm_res_events.8.t
 	desc = otto_arm_res_events.8.d
 	flavor = otto_arm_res_events.8.f

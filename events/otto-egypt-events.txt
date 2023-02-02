@@ -45,7 +45,7 @@ otto_egypt_events.1 = {
 otto_egypt_events.2 = {
 	# Fate of Egypt
 	type = country_event
-	placement = ROOT
+	placement = s:STATE_MIDDLE_EGYPT.region_state:EGY
 	title = otto_egypt_events.2.t
 	desc = otto_egypt_events.2.d
 	flavor = otto_egypt_events.2.f
@@ -115,14 +115,14 @@ otto_egypt_events.2 = {
 	}
 	option = {
 		#Do nothing for now
-		name = otto_egypt_events.2.d
+		name = otto_egypt_events.2.dd
 	}
 }
 
 otto_egypt_events.3 = {
 	#Technological support from the west"
 	type = country_event
-	placement = IMP
+	placement = ROOT
 	title = otto_egypt_events.1.t
 	desc = otto_egypt_events.1.d
 	flavor = otto_egypt_events.1.f

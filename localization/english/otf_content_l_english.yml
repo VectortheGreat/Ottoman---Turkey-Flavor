@@ -1,4 +1,22 @@
 ﻿l_english:
  TRU: "Turan"
  TRU_ADJ: "Turanic"
- 
+
+ otf_fate_of_egypt:0 "Fate of Egypt"
+ otf_fate_of_egypt_desc:0 "Make a decision about what will be the final state of Egypt."
+ otf_annex_islamic_subjects_dcs:0 "Annex Islamic Subjects"
+ otf_annex_islamic_subjects_dcs_desc:0 "Start annexing the Islamic Subjects one by one each year. Infamy must be low and relations must be good."
+
+ unify_turan_persia:0 "The Persian Empire is either a subject state on us or the Persian Empire does not exist."
+
+ ideology_modernized_army:0 "Modernized Army"
+ ideology_heavy_industrialization:0 "Heavy Industrialization"
+ ideology_balanced_industrialization:0 "Balanced Industrialization"
+ ideology_agriculturalism:0 "Agriculturalism"
+ ideology_otf_liberal:0 "Nationalist Reformist"
+ ideology_otf_republican_ottomanism:0 "Ottomanist"
+ ideology_otf_republican_islamism:0 "Islamist"
+ ideology_otf_socialism:0 "Socialist"
+
+ ACHIEVEMENT_achi_test_1:0 "Koruyucu"
+ ACHIEVEMENT_DESC_achi_test_1:0 ""Complete this shit"

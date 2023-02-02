@@ -79,7 +79,7 @@ otf_educated_people = {
 }
 
 otf_modern_public_administration = {
-	country_bureaucracy_mult = 0.25
+	country_bureaucracy_mult = 0.1
 }
 
 otf_equal_rights = {

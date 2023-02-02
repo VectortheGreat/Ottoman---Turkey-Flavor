@@ -24,7 +24,7 @@ otf_events.1 = {
 otf_events.2 = {
 	#Reconquest of Crimea
 	type = country_event
-	placement = IMP
+	placement = s:STATE_CRIMEA.region_state:TUR
 	title = otf_events.2.t
 	desc = otf_events.2.d
 	flavor = otf_events.2.f
@@ -341,7 +341,7 @@ otf_events.7 = {
 otf_events.8 = {
 	#Hijaz Railway
 	type = country_event
-	placement = IMP
+	placement = s:STATE_HEDJAZ.region_state:TUR
 	title = otf_events.8.t
 	desc = otf_events.8.d
 	flavor = otf_events.8.f
@@ -411,19 +411,19 @@ otf_events.8 = {
 	option = {
 		#Just improve local ways
 		name = otf_events.8.b
-		s:STATE_SYRIA = {
+		scope:syria_state = {
 			add_modifier = {
 				name = otf_hijaz_railway_2_mdf
 				months = 120
 			}
 		}
-		s:STATE_TRANSJORDAN = {
+		scope:transjordan_state = {
 			add_modifier = {
 				name = otf_hijaz_railway_2_mdf
 				months = 120
 			}
 		}
-		s:STATE_HEDJAZ = {
+		scope:hedjaz_state = {
 			add_modifier = {
 				name = otf_hijaz_railway_2_mdf
 				months = 120
@@ -502,7 +502,7 @@ otf_events.10 = {
 otf_events.11 = {
 	#Annex Event for Islamic Subjects
 	type = country_event
-	placement = IMP
+	placement = scope:otf_annex_islamic_subject
 	title = otf_events.11.t
 	desc = otf_events.11.d
 	flavor = otf_events.11.f
@@ -683,7 +683,7 @@ otf_events.14 = {
 			name = otf_jon_turks_obey_sultan
 			months = normal_modifier_time
 		}
-		ig:ig_intelligentsia = {
+		capital_scope = {
 			add_radicals = {
 				value = 0.25
 			}

@@ -18,8 +18,8 @@
 
  otf_educate_people_je:0 "Educate People"
  otf_educate_people_je_reason:0 "Qualified people are important to the survival of our empire. We will be the most developed society with the education of our people."
- otf_educate_people_je:0 "Improve Public Service"
- otf_educate_people_je_reason:0 "The state is a house, the people a family. If you improve your house, you will be loved by your family and you will expand your family."
+ otf_improve_public_service_je:0 "Improve Public Service"
+ otf_improve_public_service_je_reason:0 "The state is a house, the people a family. If you improve your house, you will be loved by your family and you will expand your family."
  otf_women_and_children_je:0 "Women and Children Rights"
  otf_women_and_children_je_reason:0 "A society in which women are treated as a second class and children as workers will always lag behind. We will set an example for all humanity by ensuring their rights."
  otf_strong_market_je:0 "Strong Market"
@@ -27,7 +27,7 @@
  otf_black_gold_je:0 "Black Gold"
  otf_black_gold_je_reason:0 "Undoubtedly the most valuable of resources, this black gold causes empires to divide and tribes to collapse. As long as we dominate this black gold worldwide, no one can fight us."
  otf_western_diplomacy_je:0 "Western Diplomacy"
- otf_western_diplomacy_jereason:0 "Western states do not have good intentions on us, but if we establish a policy of balance between them, we can reduce their bad intentions against us."
+ otf_western_diplomacy_je_reason:0 "Western states don't have good intentions on us, but if we establish a policy of balance between them, we can reduce their bad intentions against us."
  otf_improve_army_equipment_je:0 "Improve Army Equipments"
  otf_improve_army_equipment_je_reason:0 "The soldiers of our empire do not deserve primitive equipment. We will strengthen our victorious army by modernizing their equipment."
 
@@ -47,7 +47,7 @@
  otf_modernize_army_pan_turkic_je_reason:0 "Our army still has the Monarchy and some reactionary ideologies. We must get rid of all reactionary officers and establish an army worthy of the Turkish nation."
 
  otf_pre_otto_egypt_war_je:0 "1939 Second Ottoman-Egypt War"
- otf_pre_otto_egypt_war_je_reason:0 "Our states in the Middle East and Anatolia were captured by the rebel Muhammad Ali Pasha in a short time. His current purpose is capture other lands of our Empire. Western contries are also disturbed by this revolt. For 3 years we must reform our empire militarily and recapture our states."
+ otf_pre_otto_egypt_war_je_reason:0 "Our states in the Middle East and Anatolia were captured by Muhammad Ali Pasha in a short time. His current purpose is capture other lands of our Empire. Western countries are also disturbed by this revolt. For 3 years we must reform our empire militarily and recapture our states."
 
  otf_north_africa_je:0 "Conquer North Africa"
  otf_north_africa_je_reason:0 "We must recapture these lands, which are threatened by the French and the Spaniards."

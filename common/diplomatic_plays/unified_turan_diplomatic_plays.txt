@@ -13,13 +13,16 @@
 		NOT = {
 			is_country_type = decentralized
 		}
-		# has_technology_researched = multilateral_alliances
-		OR = {
-			NOT = {
-				exists = c:PER
-			}
-			c:PER = {
-				is_subject_of = c:TUR
+		has_technology_researched = multilateral_alliances
+		custom_tooltip = {
+			text = unify_turan_persia
+			OR = {
+				NOT = {
+					exists = c:PER
+				}
+				c:PER = {
+					is_subject_of = c:TUR
+				}
 			}
 		}
 	}

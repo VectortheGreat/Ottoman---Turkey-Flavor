@@ -13,7 +13,7 @@
 	diplomatic_play_boldness = 200	# Added to base boldness in diplomatic plays		
 	# Added to value from default strategy
 	bravery = {
-		value = 1000
+		value = 1000000
 	}
 	# Added to value from default strategy
 	aggression = {
@@ -27,7 +27,7 @@
 					}
 				}
 			}
-			add = 50
+			add = 5000
 		}
 		# Less aggressive against countries we're just antagonistic against, rather than belligerent/domineering
 		if = {
