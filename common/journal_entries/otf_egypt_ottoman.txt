@@ -48,3 +48,64 @@
 	weight = 10000
 	should_be_pinned_by_default = yes
 }
+
+otf_reconquest_egpyt_je = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	complete = {
+		NOT = {
+			c:TUR = {
+				is_diplomatic_play_enemy_of = EGY
+			}
+		}
+		NOT = {
+			c:TUR = {
+				has_truce_with = c:EGY
+			}
+		}
+		custom_tooltip = {
+			text = egypt_exist_subject
+			exists = c:EGY
+			NOT = {
+				c:EGY = {
+					is_subject_of = c:TUR
+				}
+			}
+		}
+	}
+	on_complete = {
+		custom_tooltip = {
+			text = infamy_warning
+		}
+		if = {
+			limit = {
+				c:TUR = {
+					NOT = {
+						has_war_with = c:EGY
+					}
+				}
+			}
+			trigger_event = {
+				id = otf_events.1
+			}
+		}
+		custom_tooltip = {
+			text = c
+		}
+	}
+	invalid = {
+		OR = {
+			c:TUR = {
+				is_at_war = yes
+				is_diplomatic_play_enemy_of = EGY
+			}
+			NOT = {
+				exists = c:EGY
+			}
+			c:EGY = {
+				is_subject = yes
+			}
+		}
+	}
+	weight = 10000
+	should_be_pinned_by_default = yes
+}

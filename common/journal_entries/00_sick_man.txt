@@ -49,6 +49,16 @@ je_sick_man_syria = {
 		owns_entire_state_region = STATE_ADANA
 	}
 	on_complete = {
+		set_variable = fate_of_egypt_dcs
+		add_journal_entry = {
+			type = otf_reconquest_egpyt_je
+		}
+		c:EGY = {
+			add_modifier = {
+				name = otf_bad_egypt
+				months = -1
+			}
+		}
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
@@ -107,7 +117,6 @@ je_sick_man_syria = {
 				type = je_sick_man_egypt
 			}
 		}
-		set_variable = fate_of_egypt_dcs
 		custom_tooltip = sickman_syria_egypt
 	}
 	invalid = {

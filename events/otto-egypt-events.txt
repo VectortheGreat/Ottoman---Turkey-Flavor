@@ -7,11 +7,11 @@ otto_egypt_events.1 = {
 	desc = otto_egypt_events.1.d
 	flavor = otto_egypt_events.1.f
 	event_image = {
-		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+		video = "gfx/event_pictures/middleeast_battlefield_trenches.bk2"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-	icon = "gfx/interface/icons/event_icons/unify.dds"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/battlefield_trenches"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	duration = 1
 	option = {
 		name = otto_egypt_events.1.a
@@ -54,7 +54,7 @@ otto_egypt_events.2 = {
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-	icon = "gfx/interface/icons/event_icons/unify.dds"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
 	option = {
 		#Annex Egypt
 		name = otto_egypt_events.2.a
@@ -116,6 +116,9 @@ otto_egypt_events.2 = {
 	option = {
 		#Do nothing for now
 		name = otto_egypt_events.2.dd
+		custom_tooltip = {
+			text = egy_event_2_egy_option_tooltip
+		}
 	}
 }
 
@@ -123,15 +126,15 @@ otto_egypt_events.3 = {
 	#Technological support from the west"
 	type = country_event
 	placement = ROOT
-	title = otto_egypt_events.1.t
-	desc = otto_egypt_events.1.d
-	flavor = otto_egypt_events.1.f
+	title = otto_egypt_events.3.t
+	desc = otto_egypt_events.3.dd
+	flavor = otto_egypt_events.3.f
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-	icon = "gfx/interface/icons/event_icons/unify.dds"
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
 	duration = 1
 	option = {
 		name = otto_egypt_events.3.a

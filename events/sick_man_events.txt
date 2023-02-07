@@ -155,6 +155,27 @@ sick_man.2 = {
 		s:STATE_NORTHERN_TRANSYLVANIA = {
 			add_claim = ROOT
 		}
+		s:STATE_CRIMEA = {
+			add_claim = ROOT
+		}
+		s:STATE_CHERSON = {
+			add_claim = ROOT
+		}
+		s:STATE_LUHANSK = {
+			add_claim = ROOT
+		}
+		s:STATE_ROSTOV = {
+			add_claim = ROOT
+		}
+		s:STATE_KUBAN = {
+			add_claim = ROOT
+		}
+		s:STATE_DALMATIA = {
+			add_claim = ROOT
+		}
+		s:STATE_CROATIA = {
+			add_claim = ROOT
+		}
 	}
 	option = {
 		name = sick_man.2.c

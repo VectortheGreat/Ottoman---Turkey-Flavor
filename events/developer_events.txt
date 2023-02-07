@@ -2,7 +2,7 @@
 dev.1 = {
 	type = country_event
 	event_image = {
-		video = "gfx/event_pictures/europenorthamerica_capitalists_meeting.bk2"
+		video = "gfx/event_pictures/middleeast_oil_derricks.bk2"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/world_fair"
@@ -10,15 +10,25 @@ dev.1 = {
 	title = dev.1.t
 	desc = dev.1.d
 	flavor = dev.1.f
-	duration = 3
+	duration = 0
 	option = {
 		name = dev.1.a
 		default_option = yes
-		set_variable = otf_turanic_idea_vr
+		every_scope_state = {
+			limit = {
+				region = sr:region_anatolia
+			}
+			create_building = {
+				building = building_university
+				level = 5
+			}
+		}
 	}
 	option = {
 		name = deb.1.b
-		remove_variable = armenian_bad_sol_var
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_liberal
+		}
 	}
 	option = {
 		name = deb.1.c
@@ -99,7 +109,12 @@ dev.1 = {
 	}
 	option = {
 		name = deb.1.j
-		remove_variable = jon_turk_economic_policy_completed
+		if = {
+			limit = {
+				has_modifier = outmoded_bureaucracy
+			}
+			remove_modifier = outmoded_bureaucracy
+		}
 	}
 	option = {
 		name = deb.1.k
@@ -117,7 +132,84 @@ dev.1 = {
 	option = {
 		name = deb.1.l
 		add_journal_entry = {
-			type = je_sick_man_syria
+			type = otf_reconquest_egpyt_je
 		}
+	}
+	option = {
+		name = deb.1.m
+		s:STATE_ERZURUM.region_state:TUR = {
+			every_scope_pop = {
+				change_pop_culture = {
+					value = 0.1
+					target = cu:turkish
+				}
+			}
+		}
+	}
+	option = {
+		name = deb.1.n
+		s:STATE_ERZURUM.region_state:TUR = {
+			every_scope_pop = {
+				change_pop_culture = {
+					value = 0.4
+					target = cu:armenian
+				}
+			}
+		}
+	}
+}
+
+dev.2 = {
+	type = country_event
+	event_image = {
+		video = "gfx/event_pictures/middleeast_oil_derricks.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/world_fair"
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	title = dev.1.t
+	desc = dev.1.d
+	flavor = dev.1.f
+	placement = scope:diyarbakir_scope
+	duration = 0
+	trigger = {
+		s:STATE_ERZURUM.region_state:TUR = {
+			any_scope_pop = {
+				culture = cu:turkish
+				percent <= 0.5
+			}
+		}
+		s:STATE_TRABZON.region_state:TUR = {
+			any_scope_pop = {
+				culture = cu:turkish
+				percent <= 0.5
+			}
+		}
+		s:STATE_DIYARBAKIR.region_state:TUR = {
+			any_scope_pop = {
+				culture = cu:turkish
+				percent <= 0.5
+			}
+		}
+		s:STATE_ADANA.region_state:TUR = {
+			any_scope_pop = {
+				culture = cu:turkish
+				percent <= 0.5
+			}
+		}
+	}
+	option = {
+		name = dev.1.a
+		default_option = yes
+		# any_scope_state = {
+		# 	region = sr:region_anatolia
+		# 	any_scope_culture = {
+		# 		OR = {
+		# 			culture = cu:turkish
+		# 			culture = cu:turkic
+		# 		}
+		# 		percent >= 0.5
+		# 	}
+		# }
 	}
 }

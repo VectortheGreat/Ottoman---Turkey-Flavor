@@ -50,9 +50,7 @@ otf_foundation_hamidiye = {
 }
 
 otf_hamidiye_barracks = {
-	country_expenses_add = 15000
-	state_turmoil_effects_mult = -0.2
-	state_mortality_turmoil_mult = 0.1
+	state_turmoil_effects_mult = -0.3
 }
 
 otf_born_of_jon_turks_mdf = {
@@ -127,4 +125,20 @@ otf_peoples_empire_mdf = {
 
 otf_modernize_army_mdf = {
 	interest_group_ig_ig_armed_forces_approval_add = 2
+}
+
+balkans_united_mdf = {
+	country_prestige_add = 100
+}
+
+north_africa_united_mdf = {
+	country_prestige_add = 100
+}
+
+otf_prevent_separatism_mdf = {
+	country_expenses_add = 7500
+}
+
+otf_bad_egypt = {
+	country_prestige_mult = -0.5
 }

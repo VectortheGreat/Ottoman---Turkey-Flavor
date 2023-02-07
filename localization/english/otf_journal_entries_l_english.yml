@@ -8,10 +8,10 @@
  otf_armenian_integration_je_goal:0 "Complete 20 Armenian Integration Score"
  
  otf_born_of_jon_turks:0 "Born of Young Turks"
- otf_born_of_jon_turks_reason:0 "During the declining period of the Ottoman Empire, it started a Westernization movement. An intellectual group of Young people, with the support of the Sultan, received education in Europe and returned to their country. This group, which calls themselves the Jön Turks (Young Turks), received the bureaucratic, social, and economic education in Europe, and with this education, they will reform their country."
+ otf_born_of_jon_turks_reason:0 "During the declining period of the [ROOT.GetCountry.GetName], it started a Westernization movement. An intellectual group of Young people, with the support of the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle], received education in Europe and returned to their country. This group, which calls themselves the Jön Turks (Young Turks), received the bureaucratic, social, and economic education in Europe, and with this education, they will reform their country."
 
- otf_reduce_the_sultans_rights_je:0 "Restrict the Sultan's Rights"
- otf_reduce_the_sultans_rights_je_reason:0 "The sultan's decisions cause the disaster of our empire. The Sultan should never be above the law. Our Sultan and his dynasty should be responsible to our people. The only institution that will oversee this is Meclis-i Mebusan(Chamber of Deputies)."
+ otf_reduce_the_sultans_rights_je:0 "Restrict the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]'s Rights"
+ otf_reduce_the_sultans_rights_je_reason:0 "The [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]'s decisions cause the disaster of our empire. The [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] should never be above the law. Our [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] and his dynasty should be responsible to our people. The only institution that will oversee this is Meclis-i Mebusan(Chamber of Deputies)."
 
  otf_ban_slavery_je:0 "Ban Slavery"
  otf_ban_slavery_je_reason:0 "Slavery must be abolished to build a modern society."
@@ -32,7 +32,7 @@
  otf_improve_army_equipment_je_reason:0 "The soldiers of our empire do not deserve primitive equipment. We will strengthen our victorious army by modernizing their equipment."
 
  otf_legislate_kanuni_esasi_je:0 "Legislate Kanuni Esasi"
- otf_legislate_kanuni_esasi_je_reason:0 "Kanun-i Esasi is one of the first laws adopted by the ideology of Ottomanism in the Ottoman Empire. This law is based on protecting the rights of minorities and citizens of different religions."
+ otf_legislate_kanuni_esasi_je_reason:0 "Kanun-i Esasi is one of the first laws adopted by the ideology of Ottomanism in the [ROOT.GetCountry.GetName]. This law is based on protecting the rights of minorities and citizens of different religions."
  otf_peoples_empire_je:0 "People's Empire"
  otf_peoples_empire_je_reason:0 "Every citizen should be treated equally in our empire. We can keep our empire alive as long as we protect their rights equally.."
  otf_reconquer_hijaz_je:0 "Reconquer Hedjaz"
@@ -47,11 +47,14 @@
  otf_modernize_army_pan_turkic_je_reason:0 "Our army still has the Monarchy and some reactionary ideologies. We must get rid of all reactionary officers and establish an army worthy of the Turkish nation."
 
  otf_pre_otto_egypt_war_je:0 "1939 Second Ottoman-Egypt War"
+ otf_pre_otto_egypt_war_je_goal:0 "It will be completed when we don't take any diplomatic play with Egypt for 3 years."
  otf_pre_otto_egypt_war_je_reason:0 "Our states in the Middle East and Anatolia were captured by Muhammad Ali Pasha in a short time. His current purpose is capture other lands of our Empire. Western countries are also disturbed by this revolt. For 3 years we must reform our empire militarily and recapture our states."
+ otf_reconquest_egpyt_je:0 "Reconquest of Egypt"
+ otf_reconquest_egpyt_je_reason:0 "Egypt is one of the most important state of our empire. Despite the emergence of many rebel governors in Egypt, no rebellion has been this big. We must reconquer the states that belonged to our empire."
 
  otf_north_africa_je:0 "Conquer North Africa"
  otf_north_africa_je_reason:0 "We must recapture these lands, which are threatened by the French and the Spaniards."
  otf_balkans_je:0 "Conquer Balkans"
  otf_balkans_je_reason:0 "The Balkans became the homeland of our empire. We must suppress the separatist movements in the Balkans and reunite them under the empire."
  otf_crimea_je:0 "Conquer Crimea"
- otf_crimea_je_reason:0 "Crimea was little homeland for the Ottoman Empire. After being captured by the Russians, the Crimean Tatars suffered a great defeat. We must reintegrate the Crimean Tatars who were exiled even from their own lands."
+ otf_crimea_je_reason:0 "Crimea was little homeland for the [ROOT.GetCountry.GetName]. After being captured by the Russians, the Crimean Tatars suffered a great defeat. We must reintegrate the Crimean Tatars who were exiled even from their own lands."

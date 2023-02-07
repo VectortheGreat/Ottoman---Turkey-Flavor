@@ -58,7 +58,7 @@ otf_central_asia_je = {
 }
 
 otf_modernize_army_pan_turkic_je = {
-	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	icon = "gfx/interface/icons/objectives/hegemon.dds"
 	complete = {
 		ig:ig_armed_forces = {
 			is_powerful = no

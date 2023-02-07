@@ -43,9 +43,6 @@
 		NOT = {
 			exists = c:TRU
 		}
-		# NOT = {
-		# 	country_has_primary_culture = cu:persian
-		# }
 		has_technology_researched = pan-nationalism
 		OR = {
 			country_has_primary_culture = cu:turkish

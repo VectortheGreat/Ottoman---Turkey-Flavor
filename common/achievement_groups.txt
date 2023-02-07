@@ -8,6 +8,11 @@
 group = {
 	name = "easy_group"
 	order = {
+		"otf_enverism"
+		"otf_just_like_erdogans_did"
+		"otf_peoples_empire"
+		"otf_turconia"
+		"otf_didnt_happen_but_they_deserved"
 		"victorian_century"
 		"poor_huddled_masses"
 		"mightier_than_the_sword"
@@ -15,13 +20,16 @@ group = {
 		"educated"
 		"revolutionary"
 		"we_are_not_amused"
-		"achi_test_1"
 	}
 }
 
 group = {
 	name = "medium_group"
 	order = {
+		"otf_kemalist_dictatorship"
+		"otf_welcome_home_again"
+		"otf_turkish_industry"
+		"otf_turanic_ambition"
 		"peccavi"
 		"perkeletankki"
 		"anarchy_in_the_uk"
@@ -51,6 +59,8 @@ group = {
 group = {
 	name = "hard_group"
 	order = {
+		"otf_whos_sick_man_now"
+		"otf_suleymans_will"
 		"luxurious_luxembourg"
 		"muhammed_alis_ambition"
 		"i_didnt_vote_for_pedro"
@@ -70,6 +80,8 @@ group = {
 group = {
 	name = "very_hard_group"
 	order = {
+		"otf_trully_defender_of_islam"
+		"otf_evil_sevres_be_like"
 		"an_empire_under_the_pun"
 		"american_territory"
 	}

@@ -761,10 +761,362 @@ star_swarmed_banner = {
 	}
 }
 
-achi_test_1 = {
+otf_suleymans_will = {
+	#OK
 	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
 	}
 	happened = {
-		has_law = law_type:law_multicultural
+		hidden_trigger = {
+			OR = {
+				c:TUR = {
+					owns_entire_state_region = STATE_AUSTRIA
+				}
+				c:TRU = {
+					owns_entire_state_region = STATE_AUSTRIA
+				}
+			}
+		}
+	}
+}
+
+otf_turanic_ambition = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			this = c:TRU
+		}
+	}
+}
+
+otf_enverism = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			OR = {
+				c:PRU = {
+					has_diplomatic_pact = {
+						who = root
+						type = alliance
+					}
+					relations:root >= relations_threshold:amicable
+				}
+				c:GER = {
+					has_diplomatic_pact = {
+						who = root
+						type = alliance
+					}
+					relations:root >= relations_threshold:amicable
+				}
+				c:NGF = {
+					has_diplomatic_pact = {
+						who = root
+						type = alliance
+					}
+					relations:root >= relations_threshold:amicable
+				}
+			}
+		}
+	}
+}
+
+otf_didnt_happen_but_they_deserved = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			has_variable = completed_anti_armenian_policy
+		}
+	}
+}
+
+otf_welcome_home_again = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			c:EGY = {
+				OR = {
+					has_diplomatic_pact = {
+						who = c:TUR
+						type = puppet
+					}
+					has_diplomatic_pact = {
+						who = c:TRU
+						type = puppet
+					}
+				}
+			}
+		}
+	}
+}
+
+otf_turkish_industry = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			ig:ig_intelligentsia = {
+				has_ideology = ideology_heavy_industrialization
+			}
+			has_law = law_type:law_laissez_faire
+			GDP >= 1000000000
+		}
+	}
+}
+
+otf_peoples_empire = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			ig:ig_intelligentsia = {
+				has_ideology = ideology_balanced_industrialization
+				has_ideology = ideology_otf_socialism
+			}
+			has_variable = otf_ottomanist_idea_vr
+			has_law = law_type:law_council_republic
+		}
+	}
+}
+
+otf_whos_sick_man_now = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			global_country_ranking = 1
+			c:RUS = {
+				global_country_ranking > 15
+			}
+		}
+	}
+}
+
+otf_trully_defender_of_islam = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			has_variable = otf_islamic_idea_vr
+			any_country = {
+				religion = rel:sunni
+				count = 1
+			}
+		}
+	}
+}
+
+otf_evil_sevres_be_like = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			OR = {
+				c:TUR = {
+					owns_entire_state_region = STATE_HOME_COUNTIES
+					owns_entire_state_region = STATE_ILE_DE_FRANCE
+					owns_entire_state_region = STATE_LAZIO
+					owns_entire_state_region = STATE_KANTO
+				}
+				c:TRU = {
+					owns_entire_state_region = STATE_HOME_COUNTIES
+					owns_entire_state_region = STATE_ILE_DE_FRANCE
+					owns_entire_state_region = STATE_LAZIO
+					owns_entire_state_region = STATE_KANTO
+				}
+			}
+		}
+	}
+}
+
+otf_turconia = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			OR = {
+				c:TUR = {
+					owns_entire_state_region = STATE_FLORIDA
+				}
+				c:TRU = {
+					owns_entire_state_region = STATE_FLORIDA
+				}
+			}
+		}
+	}
+}
+
+otf_just_like_erdogans_did = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			any_scope_state = {
+				region = sr:region_anatolia
+				any_scope_building = {
+					is_building_type = building_university
+					level >= 5
+				}
+				count >= 12
+			}
+		}
+	}
+}
+
+otf_kemalist_dictatorship = {
+	#OK
+	possible = {
+		OR = {
+			AND = {
+				exists = c:TUR
+				this = c:TUR
+			}
+			AND = {
+				exists = c:TRU
+				this = c:TRU
+			}
+		}
+	}
+	happened = {
+		hidden_trigger = {
+			OR = {
+				has_law = law_type:law_presidential_republic
+				has_law = law_type:law_parliamentary_republic
+			}
+			has_law = law_type:law_autocracy
+		}
 	}
 }

@@ -1,5 +1,5 @@
 ﻿otf_legislate_kanuni_esasi_je = {
-	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
 	complete = {
 		NOR = {
 			has_law = law_type:law_state_religion
@@ -25,7 +25,7 @@
 }
 
 otf_peoples_empire_je = {
-	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
 	complete = {
 		global_country_ranking <= 3
 		has_law = law_type:law_multicultural

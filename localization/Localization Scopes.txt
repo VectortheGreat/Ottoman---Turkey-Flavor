@@ -1,0 +1,7 @@
+[ROOT.GetCountry.GetAdjectiveNoFormatting]
+[ROOT.GetCountry.GetName]
+[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]
+[ROOT.GetCountry.GetRuler.GetTitle]
+[ROOT.GetCountry.GetRuler.GetSheHe]
+[ROOT.GetCountry.GetRuler.GetHerHis]
+[ROOT.GetCountry.GetRuler.GetLastName]
