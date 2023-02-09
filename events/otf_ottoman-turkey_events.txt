@@ -211,6 +211,15 @@ otf_events.5 = {
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
 	duration = 3
+	trigger = {
+		this = c:TRU
+		NOT = {
+			has_variable = otf_event5_completed
+		}
+	}
+	immediate = {
+		set_variable = otf_event5_completed
+	}
 	option = {
 		name = otf_events.5.a
 		default_option = yes
@@ -485,6 +494,10 @@ otf_events.9 = {
 				}
 			}
 		}
+		add_modifier = {
+			name = otf_dof_islam_inf_mdf
+			months = -1
+		}
 	}
 	option = {
 		#We don't need this
@@ -534,7 +547,7 @@ otf_events.11 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
-	duration = 1
+	duration = 2
 	cooldown = {
 		months = 12
 	}
@@ -687,7 +700,7 @@ otf_events.14 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
-	duration = 1
+	duration = 3
 	immediate = {
 		add_radicals = {
 			culture = cu:turkish
@@ -774,7 +787,7 @@ otf_events.15 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/africa/leader_arguing"
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
-	duration = 1
+	duration = 3
 	trigger = {
 		has_variable = otf_ottomanist_idea_vr
 		has_technology_researched = socialism
@@ -795,7 +808,52 @@ otf_events.15 = {
 	option = {
 		name = otf_events.15.b
 		add_radicals = {
-			value = 0.15
+			value = 0.05
 		}
 	}
 }
+
+# otf_events.16 = {
+# 	#Every Month Turkic Converter
+# 	type = country_event
+# 	placement = IMP
+# 	title = otf_events.16.t
+# 	desc = otf_events.16.d
+# 	flavor = otf_events.16.f
+# 	event_image = {
+# 		video = "gfx/event_pictures/africa_leader_arguing.bk2"
+# 	}
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+# 	on_opened_soundeffect = "event:/SFX/Events/africa/leader_arguing"
+# 	icon = "gfx/interface/icons/event_icons/event_election.dds"
+# 	duration = 1
+# 	hidden = yes
+# 	trigger = {
+# 		this = c:TRU
+# 		has_variable = otf_event5_completed
+# 	}
+# 	immediate = {
+# 		every_scope_pop = {
+# 			limit = {
+# 				OR = {
+# 					has_pop_culture = turkish
+# 					has_pop_culture = azerbaijani
+# 					has_pop_culture = kazak
+# 					has_pop_culture = uighur
+# 					has_pop_culture = kirgiz
+# 					has_pop_culture = turkmen
+# 					has_pop_culture = uzbek
+# 					has_pop_culture = tatar
+# 				}
+# 			}
+# 			change_pop_culture = {
+# 				target = cu:turkic
+# 				value = 1
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = otf_events.15.a
+# 		default_option = yes
+# 	}
+# }

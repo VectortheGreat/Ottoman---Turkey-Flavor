@@ -1,4 +1,4 @@
-﻿l_english:
+﻿l_turkish:
  #Journal Entries
  otf_anti_armenian_policy_je:0 "Anti Ermeni Politikası"
  otf_anti_armenian_policy_je_reason:0 "Ermenilerin çıkardıkları ayrılıkçı hareketleri yerel bölgelerimizde husursuzluk çıkarıyor. Onların direnişlerini kırmalıyız."
@@ -7,13 +7,13 @@
  otf_armenian_integration_je_reason:0 "Ermeniler her ne kadar bizden ayrılmak isteselerde, biz onları kendi ulusumuza entegre edeceğiz."
  otf_armenian_integration_je_goal:0 "20 Ermeni Entegrasyonu Skoru Tamamla""
  
- otf_born_of_jon_turks:0 "Born of Young Turks"
+ otf_born_of_jon_turks:0 "Jön Türklerin Doğuşu"
  otf_born_of_jon_turks_reason:0 "[ROOT.GetCountry.GetName]'nun gerileme döneminde Batılılaşma hareketi başlatmıştır. Gençlerden oluşan bir aydın grubu, [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]ın desteğiyle Avrupa'da eğitim görmüş ve ülkelerine dönmüştür. Kendilerine Jön Türkler (Genç Türkler) adı verilen bu grup Avrupa'daki bürokratik, sosyal ve ekonomik eğitimi almışlar ve bu eğitimle ülkelerini reforme edecekler."
  
- otf_reduce_the_sultans_rights_je:0 "[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]ın Haklarını Sınırla"
+ otf_reduce_the_sultans_rights_je:0 "Sultan'ın Haklarını Sınırla"
  otf_reduce_the_sultans_rights_je_reason:0 "[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]ın kararları imparatorluğumuzun felaketine neden oluyor. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]ımız asla kanunların üzerinde olmamalıdır. [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]ımız ve hanedanı halkımıza karşı sorumlu olmalıdır. Bunu denetleyecek tek kurum Meclis-i Mebusan'dır."
 
- otf_ban_slavery_je:0 "[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]ın Haklarını Sınırla"
+ otf_ban_slavery_je:0 "Köleliği Yasakla"
  otf_ban_slavery_je_reason:0 "Modern bir toplum inşa etmek için kölelik kaldırılmalıdır."
 
  otf_educate_people_je:0 "Halkı Eğit"
@@ -46,7 +46,7 @@
  otf_modernize_army_pan_turkic_je:0 "Orduyu Modernize Et"
  otf_modernize_army_pan_turkic_je_reason:0 "Ordumuz hala Monarşi ve bir takım gerici ideolojilere sahip. Gerici tüm subaylardan kurtulup, Türk milletine yakışan bir ordu kurmalıyız."
 
- otf_pre_otto_egypt_war_je:0 "1939 Second Ottoman-Egypt War"
+ otf_pre_otto_egypt_war_je:0 "1939 İkinci Osmanlı-Mısır Savaşı"
  otf_pre_otto_egypt_war_je_goal:0 "3 yıl boyunca Mısır ile herhangi bir diplomatik eyleme girmediğimizde tamamlanacaktır."
  otf_pre_otto_egypt_war_je_reason:0 "Ortadoğu'da ve Anadolu'da eyaletlerimizi kısa sürede İsyancı Mehmet Ali Paşa tarafından ele geçirildi. Onun Şuan ki amacı İmparatorluğumuzun diğer topraklarını ele geçirmektir. Batılı devletler de bu isyandan rahatsız olmaktadır. 3 yıl boyunca imparatorluğumuzun askeri yönden reform etmeli ve topraklarımızı tekrardan ele geçirmeliyiz."
  otf_reconquest_egpyt_je:0 "Mısırın Yeniden Fetihi"

@@ -1,10 +1,12 @@
 ﻿on_monthly_pulse_country = {
 	events = {
+		otf_events.5
 		otf_events.7
 		otf_events.8
 		otf_events.11
 		otf_events.13
 		otf_events.15
+		# otf_events.16
 		otto_arm_res_events.1
 		otto_arm_res_events.5
 		snori_C_events.1

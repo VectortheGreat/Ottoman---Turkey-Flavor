@@ -32,12 +32,32 @@ otto_egypt_events.1 = {
 					target_state = s:STATE_ALEPPO.region_state:EGY
 				}
 			}
-			change_infamy = 8
+			change_infamy = 4
 		}
 		set_variable = oft_egypt_je
 		add_modifier = {
 			name = otf_otto_egypt_war_mdf
 			months = 30
+		}
+		hidden_effect = {
+			c:EGY = {
+				add_modifier = {
+					name = otf_good_egypt
+					months = 4
+				}
+				change_relations = {
+					country = c:RUS
+					value = -100
+				}
+				change_relations = {
+					country = c:GBR
+					value = -100
+				}
+				change_relations = {
+					country = c:AUS
+					value = -100
+				}
+			}
 		}
 	}
 }
@@ -119,6 +139,7 @@ otto_egypt_events.2 = {
 		custom_tooltip = {
 			text = egy_event_2_egy_option_tooltip
 		}
+		remove_variable = clr_egypt_dsc
 	}
 }
 

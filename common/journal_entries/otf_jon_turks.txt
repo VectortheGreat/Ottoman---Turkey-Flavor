@@ -104,12 +104,6 @@ otf_ban_slavery_je = {
 				months = -1
 			}
 		}
-		ig:ig_intelligentsia = {
-			add_modifier = {
-				name = suspicious_modifier
-				months = -1
-			}
-		}
 		add_loyalists = {
 			value = 0.05
 			strata = poor
@@ -251,12 +245,21 @@ otf_western_diplomacy_je = {
 	complete = {
 		OR = {
 			AND = {
-				c:PRU = {
-					has_diplomatic_pact = {
-						who = root
-						type = alliance
+				OR = {
+					c:PRU = {
+						has_diplomatic_pact = {
+							who = root
+							type = alliance
+						}
+						relations:root >= relations_threshold:amicable
 					}
-					relations:root >= relations_threshold:amicable
+					c:NGF = {
+						has_diplomatic_pact = {
+							who = root
+							type = alliance
+						}
+						relations:root >= relations_threshold:amicable
+					}
 				}
 			}
 			AND = {

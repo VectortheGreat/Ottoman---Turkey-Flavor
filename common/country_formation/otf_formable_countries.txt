@@ -33,7 +33,7 @@
 		STATE_WESTERN_THRACE
 		STATE_CRIMEA
 	}
-	required_states_fraction = 0.9
+	required_states_fraction = 0.8
 	unification_play = dp_unify_turan
 	leadership_play = dp_leadership_turan
 	ai_will_do = {

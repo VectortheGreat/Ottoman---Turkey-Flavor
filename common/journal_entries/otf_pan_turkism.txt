@@ -49,8 +49,9 @@ otf_central_asia_je = {
 		}
 	}
 	on_complete = {
-		trigger_event = {
-			id = otf_events.5
+		add_modifier = {
+			name = otf_turkic_unification_mdf
+			months = -1
 		}
 	}
 	weight = 5000

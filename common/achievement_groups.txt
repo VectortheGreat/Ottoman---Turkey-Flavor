@@ -12,7 +12,6 @@ group = {
 		"otf_just_like_erdogans_did"
 		"otf_peoples_empire"
 		"otf_turconia"
-		"otf_didnt_happen_but_they_deserved"
 		"victorian_century"
 		"poor_huddled_masses"
 		"mightier_than_the_sword"

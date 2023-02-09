@@ -13,7 +13,7 @@
 		NOT = {
 			is_country_type = decentralized
 		}
-		has_technology_researched = multilateral_alliances
+		has_technology_researched = pan-nationalism
 		custom_tooltip = {
 			text = unify_turan_persia
 			OR = {
@@ -46,7 +46,7 @@ dp_leadership_turan = {
 		NOT = {
 			is_country_type = decentralized
 		}
-		has_technology_researched = multilateral_alliances
+		has_technology_researched = pan-nationalism
 	}
 	on_weekly_pulse = {
 	}

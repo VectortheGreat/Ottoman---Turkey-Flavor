@@ -92,7 +92,7 @@ dev.1 = {
 			}
 		}
 		create_diplomatic_pact = {
-			country = c:EGY
+			country = c:PER
 			type = puppet
 		}
 	}
@@ -132,7 +132,7 @@ dev.1 = {
 	option = {
 		name = deb.1.l
 		add_journal_entry = {
-			type = otf_reconquest_egpyt_je
+			type = je_sick_man_syria
 		}
 	}
 	option = {
@@ -201,15 +201,6 @@ dev.2 = {
 	option = {
 		name = dev.1.a
 		default_option = yes
-		# any_scope_state = {
-		# 	region = sr:region_anatolia
-		# 	any_scope_culture = {
-		# 		OR = {
-		# 			culture = cu:turkish
-		# 			culture = cu:turkic
-		# 		}
-		# 		percent >= 0.5
-		# 	}
-		# }
+		remove_variable = clr_egypt_dsc
 	}
 }

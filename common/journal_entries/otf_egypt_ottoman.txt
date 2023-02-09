@@ -39,9 +39,17 @@
 		}
 	}
 	invalid = {
-		c:TUR = {
-			is_at_war = yes
-			is_diplomatic_play_enemy_of = EGY
+		OR = {
+			c:TUR = {
+				is_at_war = yes
+				is_diplomatic_play_enemy_of = c:EGY
+			}
+			NOT = {
+				exists = c:EGY
+			}
+			c:EGY = {
+				is_subject = yes
+			}
 		}
 	}
 	progressbar = yes
@@ -96,7 +104,7 @@ otf_reconquest_egpyt_je = {
 		OR = {
 			c:TUR = {
 				is_at_war = yes
-				is_diplomatic_play_enemy_of = EGY
+				is_diplomatic_play_enemy_of = c:EGY
 			}
 			NOT = {
 				exists = c:EGY

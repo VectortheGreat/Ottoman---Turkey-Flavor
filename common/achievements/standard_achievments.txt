@@ -853,27 +853,6 @@ otf_enverism = {
 	}
 }
 
-otf_didnt_happen_but_they_deserved = {
-	#OK
-	possible = {
-		OR = {
-			AND = {
-				exists = c:TUR
-				this = c:TUR
-			}
-			AND = {
-				exists = c:TRU
-				this = c:TRU
-			}
-		}
-	}
-	happened = {
-		hidden_trigger = {
-			has_variable = completed_anti_armenian_policy
-		}
-	}
-}
-
 otf_welcome_home_again = {
 	#OK
 	possible = {
