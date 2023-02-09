@@ -127,3 +127,4 @@
  otto_arm_res_events.9.d:0 "The expected news has arrived. The leaders of the Armenian resistance organizations came to the capital and took an oath of loyalty to [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]."
  otto_arm_res_events.9.f:0 "After meeting with the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle], the Armenian leaders returned to their homeland and addressed the people. The [ROOT.GetCountry.GetName] stated that there was no threat to the Armenians and said that all Armenian resistance gangs should end their ties with the Russians. In return, he stated that the [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] would enact minority laws against Armenians."
  otto_arm_res_events.9.a:0 "Long live our [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]!"
+

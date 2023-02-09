@@ -937,7 +937,6 @@ otf_peoples_empire = {
 }
 
 otf_whos_sick_man_now = {
-	#OK
 	possible = {
 		OR = {
 			AND = {
