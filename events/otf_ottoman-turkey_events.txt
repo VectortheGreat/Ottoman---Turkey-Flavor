@@ -813,47 +813,47 @@ otf_events.15 = {
 	}
 }
 
-# otf_events.16 = {
-# 	#Every Month Turkic Converter
-# 	type = country_event
-# 	placement = IMP
-# 	title = otf_events.16.t
-# 	desc = otf_events.16.d
-# 	flavor = otf_events.16.f
-# 	event_image = {
-# 		video = "gfx/event_pictures/africa_leader_arguing.bk2"
-# 	}
-# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-# 	on_opened_soundeffect = "event:/SFX/Events/africa/leader_arguing"
-# 	icon = "gfx/interface/icons/event_icons/event_election.dds"
-# 	duration = 1
-# 	hidden = yes
-# 	trigger = {
-# 		this = c:TRU
-# 		has_variable = otf_event5_completed
-# 	}
-# 	immediate = {
-# 		every_scope_pop = {
-# 			limit = {
-# 				OR = {
-# 					has_pop_culture = turkish
-# 					has_pop_culture = azerbaijani
-# 					has_pop_culture = kazak
-# 					has_pop_culture = uighur
-# 					has_pop_culture = kirgiz
-# 					has_pop_culture = turkmen
-# 					has_pop_culture = uzbek
-# 					has_pop_culture = tatar
-# 				}
-# 			}
-# 			change_pop_culture = {
-# 				target = cu:turkic
-# 				value = 1
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = otf_events.15.a
-# 		default_option = yes
-# 	}
-# }
+otf_events.16 = {
+	#Every Month Turkic Converter
+	type = country_event
+	placement = IMP
+	title = otf_events.16.t
+	desc = otf_events.16.d
+	flavor = otf_events.16.f
+	event_image = {
+		video = "gfx/event_pictures/africa_leader_arguing.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/africa/leader_arguing"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+	duration = 2
+	hidden = yes
+	trigger = {
+		this = c:TRU
+		has_variable = otf_event5_completed
+	}
+	immediate = {
+		every_scope_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = turkish
+					has_pop_culture = azerbaijani
+					has_pop_culture = kazak
+					has_pop_culture = uighur
+					has_pop_culture = kirgiz
+					has_pop_culture = turkmen
+					has_pop_culture = uzbek
+					has_pop_culture = tatar
+				}
+			}
+			change_pop_culture = {
+				target = cu:turkic
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = otf_events.16.a
+		default_option = yes
+	}
+}
