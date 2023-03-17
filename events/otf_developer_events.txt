@@ -109,12 +109,12 @@ dev.1 = {
 	}
 	option = {
 		name = deb.1.j
-		if = {
-			limit = {
-				has_modifier = outmoded_bureaucracy
-			}
-			remove_modifier = outmoded_bureaucracy
-		}
+		add_primary_culture = cu:azerbaijani
+		add_primary_culture = cu:armenian
+		add_primary_culture = cu:greek
+		add_primary_culture = cu:serbian
+		add_primary_culture = cu:albanian
+		add_primary_culture = cu:romanian
 	}
 	option = {
 		name = deb.1.k

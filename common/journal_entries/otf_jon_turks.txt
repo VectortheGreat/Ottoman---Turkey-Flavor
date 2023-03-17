@@ -50,7 +50,7 @@
 			type = otf_improve_army_equipment_je
 		}
 		add_loyalists = {
-			value = 0.1
+			value = 0.03
 		}
 	}
 	weight = 10000
@@ -81,7 +81,7 @@ otf_reduce_the_sultans_rights_je = {
 			months = 180
 		}
 		add_loyalists = {
-			value = 0.1
+			value = 0.03
 		}
 	}
 	should_be_pinned_by_default = yes
@@ -128,7 +128,7 @@ otf_educate_people_je = {
 			months = -1
 		}
 		add_loyalists = {
-			value = 0.05
+			value = 0.03
 		}
 	}
 	weight = 10000
@@ -160,7 +160,7 @@ otf_improve_public_service_je = {
 			months = -1
 		}
 		add_loyalists = {
-			value = 0.05
+			value = 0.03
 		}
 	}
 	weight = 10000
@@ -181,7 +181,7 @@ otf_women_and_children_je = {
 			months = -1
 		}
 		add_loyalists = {
-			value = 0.05
+			value = 0.03
 		}
 	}
 	weight = 1004

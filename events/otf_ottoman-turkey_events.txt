@@ -212,6 +212,7 @@ otf_events.5 = {
 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
 	duration = 3
 	trigger = {
+		exists = c:TRU
 		this = c:TRU
 		NOT = {
 			has_variable = otf_event5_completed
@@ -376,6 +377,7 @@ otf_events.8 = {
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	duration = 3
 	trigger = {
+		exists = c:TUR
 		this = c:TUR
 		has_technology_researched = railways
 		year > 1850
@@ -829,6 +831,7 @@ otf_events.16 = {
 	duration = 2
 	hidden = yes
 	trigger = {
+		exists = c:TRU
 		this = c:TRU
 		has_variable = otf_event5_completed
 	}

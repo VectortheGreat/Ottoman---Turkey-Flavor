@@ -12,7 +12,7 @@ otto_egypt_events.1 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/middleeast/battlefield_trenches"
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	duration = 1
+	duration = 2
 	option = {
 		name = otto_egypt_events.1.a
 		default_option = yes
@@ -21,23 +21,22 @@ otto_egypt_events.1 = {
 				name = sepoy_mutiny
 				type = dp_return_state
 				target_state = s:STATE_ADANA.region_state:EGY
-				add_war_goal = {
-					holder = ROOT
-					type = return_state
-					target_state = s:STATE_SYRIA.region_state:EGY
-				}
+				# add_war_goal = {
+				# 	holder = ROOT
+				# 	type = return_state
+				# 	target_state = s:STATE_SYRIA.region_state:EGY
+				# }
 				add_war_goal = {
 					holder = ROOT
 					type = return_state
 					target_state = s:STATE_ALEPPO.region_state:EGY
 				}
 			}
-			change_infamy = 4
 		}
 		set_variable = oft_egypt_je
 		add_modifier = {
 			name = otf_otto_egypt_war_mdf
-			months = 30
+			months = 15
 		}
 		hidden_effect = {
 			c:EGY = {
@@ -46,6 +45,7 @@ otto_egypt_events.1 = {
 					months = 4
 				}
 				change_relations = {
+					#Egypt fought against these countries in 1939
 					country = c:RUS
 					value = -100
 				}
@@ -143,58 +143,58 @@ otto_egypt_events.2 = {
 	}
 }
 
-otto_egypt_events.3 = {
-	#Technological support from the west"
-	type = country_event
-	placement = ROOT
-	title = otto_egypt_events.3.t
-	desc = otto_egypt_events.3.dd
-	flavor = otto_egypt_events.3.f
-	event_image = {
-		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
-	}
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-	icon = "gfx/interface/icons/event_icons/event_trade.dds"
-	duration = 1
-	option = {
-		name = otto_egypt_events.3.a
-		default_option = yes
-		if = {
-			limit = {
-				NOT = {
-					has_technology_researched = line_infantry
-				}
-			}
-			add_technology_progress = {
-				progress = 1500
-				technology = line_infantry
-			}
-		}
-		else_if = {
-			limit = {
-				NOT = {
-					has_technology_researched = napoleonic_warfare
-				}
-			}
-			add_technology_progress = {
-				progress = 1500
-				technology = napoleonic_warfare
-			}
-		}
-		else_if = {
-			limit = {
-				NOT = {
-					has_technology_researched = army_reserves
-				}
-			}
-			add_technology_progress = {
-				progress = 1500
-				technology = army_reserves
-			}
-		}
-		else = {
-			start_research_random_technology = yes
-		}
-	}
-}
+# otto_egypt_events.3 = {
+# 	#Technological support from the west [NO NEED THIS ANYMORE]
+# 	type = country_event
+# 	placement = ROOT
+# 	title = otto_egypt_events.3.t
+# 	desc = otto_egypt_events.3.dd
+# 	flavor = otto_egypt_events.3.f
+# 	event_image = {
+# 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
+# 	}
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+# 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
+# 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+# 	duration = 1
+# 	option = {
+# 		name = otto_egypt_events.3.a
+# 		default_option = yes
+# 		if = {
+# 			limit = {
+# 				NOT = {
+# 					has_technology_researched = line_infantry
+# 				}
+# 			}
+# 			add_technology_progress = {
+# 				progress = 1500
+# 				technology = line_infantry
+# 			}
+# 		}
+# 		else_if = {
+# 			limit = {
+# 				NOT = {
+# 					has_technology_researched = napoleonic_warfare
+# 				}
+# 			}
+# 			add_technology_progress = {
+# 				progress = 1500
+# 				technology = napoleonic_warfare
+# 			}
+# 		}
+# 		else_if = {
+# 			limit = {
+# 				NOT = {
+# 					has_technology_researched = army_reserves
+# 				}
+# 			}
+# 			add_technology_progress = {
+# 				progress = 1500
+# 				technology = army_reserves
+# 			}
+# 		}
+# 		else = {
+# 			start_research_random_technology = yes
+# 		}
+# 	}
+# }
